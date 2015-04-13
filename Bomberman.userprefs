@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DestructibleBlock.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Controls.cs" Line="58" Column="46" />
+      <File FileName="Assets\Scripts\Character.cs" Line="23" Column="3" />
+      <File FileName="Assets\Scripts\Bomb.cs" Line="67" Column="58" />
+      <File FileName="Assets\Scripts\Explosion.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\Block.cs" Line="10" Column="51" />
+      <File FileName="Assets\Scripts\DestructibleBlock.cs" Line="12" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
