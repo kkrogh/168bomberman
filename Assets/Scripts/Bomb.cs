@@ -68,4 +68,14 @@ public class Bomb : MonoBehaviour
 		}
 
 	}
+	
+	void OnTriggerExit2D(Collider2D other)
+	{
+		if(other.tag == "Player")
+		{
+			this.GetComponent<Collider2D>().isTrigger = false;
+		}
+		
+	}
+	
 }
