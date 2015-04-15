@@ -6,30 +6,36 @@ public class Controls : MonoBehaviour {
 	public GameObject bomb;
 
 	private Character bomberman;
+	private Rigidbody2D rigidBody;
 	// Use this for initialization
 	void Start () {
 		//bomb = Resources.Load ("asset/Bomb");
 		bomberman = this.transform.GetComponent<Character> ();
+		rigidBody = this.GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 	
 		if( Input.GetKey( KeyCode.UpArrow ) )
 		{
-			transform.Translate(new Vector2(0,runSpeed*Time.deltaTime));
+			//transform.Translate(new Vector2(0,runSpeed*Time.deltaTime));
+			rigidBody.MovePosition((Vector2)this.transform.position + new Vector2(0,1) * runSpeed*Time.deltaTime);
 		}
 		if( Input.GetKey( KeyCode.DownArrow ) )
 		{
-			transform.Translate(new Vector2(0,-runSpeed*Time.deltaTime));
+			//transform.Translate(new Vector2(0,-runSpeed*Time.deltaTime));
+			rigidBody.MovePosition((Vector2)this.transform.position + new Vector2(0,-1) * runSpeed*Time.deltaTime);
 		}
 		if( Input.GetKey( KeyCode.LeftArrow ) )
 		{
-			transform.Translate(new Vector2(-runSpeed*Time.deltaTime,0));
+			//transform.Translate(new Vector2(-runSpeed*Time.deltaTime,0));
+			rigidBody.MovePosition((Vector2)this.transform.position + new Vector2(-1,0) * runSpeed*Time.deltaTime);
 		}
 		if( Input.GetKey( KeyCode.RightArrow ) )
 		{
-			transform.Translate(new Vector2(runSpeed*Time.deltaTime,0));
+			//transform.Translate(new Vector2(runSpeed*Time.deltaTime,0));
+			rigidBody.MovePosition((Vector2)this.transform.position + new Vector2(1,0) * runSpeed*Time.deltaTime);
 		}
 
 		if( Input.GetKeyDown( KeyCode.Space ) )
