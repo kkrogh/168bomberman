@@ -40,7 +40,20 @@ public class Controls : MonoBehaviour {
 
 		if( Input.GetKeyDown( KeyCode.Space ) )
 		{
-			if(bomberman.liveBombs < bomberman.bombLimit)
+			float x = Mathf.Round (this.transform.position.x);
+			float y = Mathf.Round (this.transform.position.y);
+			Collider2D[] colObjs = Physics2D.OverlapCircleAll (new Vector2(x,y), 0.3f);
+			bool bombPlaced = false;
+			
+			foreach(Collider2D col in colObjs)
+			{
+				if(col.tag == "Bomb")
+				{
+					bombPlaced = true;
+				}
+			}
+			
+			if(bomberman.liveBombs < bomberman.bombLimit && !bombPlaced)
 			{
 				DropBomb();
 				bomberman.liveBombs++;
