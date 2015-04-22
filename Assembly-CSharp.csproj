@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A9271820-4AB6-5A1B-F886-CC52006A1CE4}</ProjectGuid>
+	<ProjectGuid>{92593E3C-5C10-B8F7-9475-8F36CB9ADD68}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -52,6 +52,8 @@
      <Compile Include="Assets\Scripts\Controls.cs" />
      <Compile Include="Assets\Scripts\DestructibleBlock.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
+     <Compile Include="Assets\Scripts\LoginMenu.cs" />
+     <Compile Include="Assets\Scripts\Menu.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
