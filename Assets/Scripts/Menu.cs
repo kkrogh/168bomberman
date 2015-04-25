@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour {
 
 
 	public string username = "";
+	public string password = "";
 	bool RegisterUI = false;
 	bool LoginUI = false;
 
@@ -30,25 +31,40 @@ public class Menu : MonoBehaviour {
 			{
 				if(RegisterUI == true && LoginUI == false)
 				{
-					username = GUI.TextArea (new Rect(100,125,110,25),username);	
-					if(GUI.Button (new Rect(100,150,110,25),"Register"))
+					GUI.Label(new Rect(100, 125, 100, 25), "User Name: ");
+					username = GUI.TextArea (new Rect(200,125,110,25),username);
+					GUI.Label(new Rect(100, 150, 100, 25), "Password: ");
+					password = GUI.TextArea(new Rect(200,150,110,25),password);
+					if(GUI.Button (new Rect(100,175,110,25),"Register"))
 					{
-						GetComponent<NetworkView>().RPC ("Register",RPCMode.Server,username);
+						GetComponent<NetworkView>().RPC ("Register",RPCMode.Server,username,password);
 						RegisterUI = false;
-					}if(GUI.Button (new Rect(100,175,110,25),"Back"))
+						username = "";
+						password = "";
+					}if(GUI.Button (new Rect(100,200,110,25),"Back"))
 					{
 						RegisterUI = false;
+						username = "";
+						password = "";
 					}
 				}
 				else if(RegisterUI == false && LoginUI == true)
 				{
-					username = GUI.TextArea (new Rect(100,125,110,25),username);
-					if(GUI.Button (new Rect(100,150,110,25),"Login"))
+					GUI.Label(new Rect(100, 125, 100, 25), "User Name: ");
+					username = GUI.TextArea (new Rect(200,125,110,25),username);
+					GUI.Label(new Rect(100, 150, 100, 25), "Password: ");
+					password = GUI.TextArea(new Rect(200,150,110,25),password);
+					
+					if(GUI.Button (new Rect(100,175,110,25),"Login"))
 					{
-						GetComponent<NetworkView>().RPC ("Login",RPCMode.Server,username);
-					}if(GUI.Button (new Rect(100,175,110,25),"Back"))
+						GetComponent<NetworkView>().RPC ("Login",RPCMode.Server,username,password);
+						username = "";
+						password = "";
+					}if(GUI.Button (new Rect(100,200,110,25),"Back"))
 					{
 						LoginUI = false;
+						username = "";
+						password = "";
 					}
 				}
 				else{
@@ -81,14 +97,17 @@ public class Menu : MonoBehaviour {
 		}
 	}
 	[RPC]
-	void Login(string username)
+	void Login(string username, string password, NetworkMessageInfo info)
 	{
 		if (Network.isServer) {
 			bool checkUsername = PlayerPrefs.HasKey(username);
-
-			if( checkUsername)
+			if( checkUsername && PlayerPrefs.GetString(username) == password)
 			{
-				GetComponent<NetworkView>().RPC ("LoadLevel",RPCMode.Others);
+				GetComponent<NetworkView>().RPC ("LoadLevel",info.sender);
+			}
+			else
+			{
+				Debug.Log("Username or password incorrect");
 			}
 		}
 	}
@@ -105,10 +124,21 @@ public class Menu : MonoBehaviour {
 
 
 	[RPC]
-	void Register(string username)
+	void Register(string username, string password)
 	{
-		if (Network.isServer) {
-			PlayerPrefs.SetString (username,username);
+		Debug.Log(username + " + " + password);
+		if (Network.isServer) 
+		{
+			bool checkUsername = PlayerPrefs.HasKey(username);
+			
+			if(!checkUsername)
+			{
+				PlayerPrefs.SetString (username,password);
+			}
+			else
+			{
+				Debug.Log("User name already exists");
+			}
 		}
 	}
 
