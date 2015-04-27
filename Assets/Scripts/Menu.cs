@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Mono.Data.Sqlite;
+using System.Data;
+using System;
 
 public class Menu : MonoBehaviour {
 
 	////////////////////////////////////////////////////////////////////////	
-	public string IP = "192.168.0.16";//// Local IP here  //////////////////
+	public string IP = "192.168.0.2";//// Local IP here  //////////////////////////////
 	////////////////////////////////////////////////////////////////////////	
 	public int Port = 25001;
 
@@ -57,7 +60,10 @@ public class Menu : MonoBehaviour {
 					
 					if(GUI.Button (new Rect(100,175,110,25),"Login"))
 					{
+						Debug.Log( "Attempting login with username ="+username+"  password="+  password);
+
 						GetComponent<NetworkView>().RPC ("Login",RPCMode.Server,username,password);
+						Debug.Log("Here1");
 						username = "";
 						password = "";
 					}if(GUI.Button (new Rect(100,200,110,25),"Back"))
@@ -93,25 +99,78 @@ public class Menu : MonoBehaviour {
 				{
 					Network.Disconnect(250);
 				}
-
 			}
 		}
 	}
+
+
 	[RPC]
 	void Login(string username, string password, NetworkMessageInfo info)
 	{
-		if (Network.isServer) {
-			bool checkUsername = PlayerPrefs.HasKey(username);
-			if( checkUsername && PlayerPrefs.GetString(username) == password)
+		Debug.Log("login requested");
+
+		if (username == "" || password == "") {Debug.Log("no blanks allowed");}
+		else if (Network.isServer) {
+			bool loginok = false;
+			string conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db"; //Path to database.
+			IDbConnection dbconn;
+			dbconn = (IDbConnection) new SqliteConnection(conn);
+			dbconn.Open(); //Open connection to the database.
+			IDbCommand dbcmd = dbconn.CreateCommand();
+			
+			
+			string inusername = username;
+			string inpassword = password;
+			
+			string sqlQuery = "SELECT ID, username, password " + "FROM Users " + "WHERE username == '" + inusername + "' AND password == '" + inpassword + "'";
+			dbcmd.CommandText = sqlQuery;
+			IDataReader reader = dbcmd.ExecuteReader();
+			
+			
+			while (reader.Read())
 			{
-				GetComponent<NetworkView>().RPC ("LoadLevel",info.sender);
+				int ID = reader.GetInt32(0);
+				string checkname = reader.GetString(1);
+				string checkpassword = reader.GetString(2);
+				
+				Debug.Log( "ID= "+ID+" username ="+checkname+"  password="+  checkpassword);
+				
+				if(checkname == inusername && checkpassword == inpassword){
+					Debug.Log ("Found a match");
+					loginok = true;
+				}
+				
 			}
-			else
-			{
-				Debug.Log("Username or password incorrect");
+				
+	
+			
+			reader.Close();
+			reader = null;
+			dbcmd.Dispose();
+			dbcmd = null;
+			dbconn.Close();
+			dbconn = null;
+			GC.Collect();
+			Debug.Log("Disconnected from DB");
+
+			if(loginok)
+			{GetComponent<NetworkView> ().RPC ("LoadLevel", info.sender);}
+			else{
+				Debug.Log("Failed Login");
 			}
+
+
+
+
 		}
+		else if (Network.isClient)
+		{
+			Debug.Log ("Attempting to log in");
+		}
+
 	}
+
+
 	[RPC]
 	void LoadLevel()
 	{
@@ -130,11 +189,33 @@ public class Menu : MonoBehaviour {
 		Debug.Log(username + " + " + password);
 		if (Network.isServer) 
 		{
-			bool checkUsername = PlayerPrefs.HasKey(username);
+			bool checkUsername = isTaken(username);
 			
 			if(!checkUsername)
 			{
-				PlayerPrefs.SetString (username,password);
+				string conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db"; //Path to database.
+				IDbConnection dbconn;
+				dbconn = (IDbConnection) new SqliteConnection(conn);
+				dbconn.Open(); //Open connection to the database.
+				IDbCommand dbcmd = dbconn.CreateCommand();
+				
+				
+				int nextuserid = getNextUserID();
+				string sqlQuery = "INSERT INTO USERS (ID, username, password) VALUES ("+nextuserid+", '"+username+"', '"+password+"')";
+				dbcmd.CommandText = sqlQuery;
+				IDataReader reader = dbcmd.ExecuteReader();
+				
+				
+				Debug.Log( "user inserted into database" );
+				
+				reader.Close();
+				reader = null;
+				dbcmd.Dispose();
+				dbcmd = null;
+				dbconn.Close();
+				dbconn = null;
+				GC.Collect();
+				Debug.Log("Disconnected from DB");
 			}
 			else
 			{
@@ -143,4 +224,74 @@ public class Menu : MonoBehaviour {
 		}
 	}
 
+	bool isTaken(string username)
+	{
+		bool returnval = false;
+		string conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db"; //Path to database.
+		IDbConnection dbconn;
+		dbconn = (IDbConnection)new SqliteConnection (conn);
+		dbconn.Open (); //Open connection to the database.
+		IDbCommand dbcmd = dbconn.CreateCommand ();
+		
+		
+		int countamount = 0;
+		string sqlQuery = "SELECT COUNT(*) FROM Users WHERE username =='"+username+"'";
+		dbcmd.CommandText = sqlQuery;
+		IDataReader reader = dbcmd.ExecuteReader ();
+		
+		while (reader.Read()) {
+			countamount = reader.GetInt32 (0);
+			Debug.Log ("users found is "+countamount);
+		}
+		
+		
+		reader.Close ();
+		reader = null;
+		dbcmd.Dispose ();
+		dbcmd = null;
+		dbconn.Close ();
+		dbconn = null;
+		GC.Collect ();
+		Debug.Log ("Disconnected from DB");
+
+		if (countamount > 0) {
+			returnval = true;
+		}
+		return returnval;
+
+	}
+
+	int getNextUserID()
+	{
+		string conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db"; //Path to database.
+		IDbConnection dbconn;
+		dbconn = (IDbConnection)new SqliteConnection (conn);
+		dbconn.Open (); //Open connection to the database.
+		IDbCommand dbcmd = dbconn.CreateCommand ();
+		
+		
+		int nextID = 999999;
+		string sqlQuery = "SELECT COUNT(*) FROM Users";
+		dbcmd.CommandText = sqlQuery;
+		IDataReader reader = dbcmd.ExecuteReader ();
+		
+		while (reader.Read()) {
+			nextID = reader.GetInt32 (0);
+			nextID++;
+			Debug.Log ("nextID is "+nextID);
+		}
+		
+		
+		reader.Close ();
+		reader = null;
+		dbcmd.Dispose ();
+		dbcmd = null;
+		dbconn.Close ();
+		dbconn = null;
+		GC.Collect ();
+		Debug.Log ("Disconnected from DB");
+		return nextID;
+	}
+	
+	
 }
