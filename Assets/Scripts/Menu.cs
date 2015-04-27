@@ -4,7 +4,7 @@ using System.Collections;
 public class Menu : MonoBehaviour {
 
 	////////////////////////////////////////////////////////////////////////	
-	public string IP = "192.168.0.16";//// Local IP here  //////////////////////////////
+	public string IP = "192.168.0.16";//// Local IP here  //////////////////
 	////////////////////////////////////////////////////////////////////////	
 	public int Port = 25001;
 
@@ -93,6 +93,7 @@ public class Menu : MonoBehaviour {
 				{
 					Network.Disconnect(250);
 				}
+
 			}
 		}
 	}
