@@ -6,6 +6,9 @@ using System.Threading;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Mono.Data.Sqlite;
+using System.Data;
+
 
 // State object for reading client data asynchronously
 //public class StateObject {
@@ -26,6 +29,8 @@ public class SocketListener : MonoBehaviour
 	public static ManualResetEvent allDone = new ManualResetEvent(false);
 	public static List<Socket> clients = new List<Socket>();
 	
+	public string conn;
+	
 	private static bool accepted = true;
 	
 	byte[] bytes = new Byte[1024];
@@ -43,6 +48,7 @@ public class SocketListener : MonoBehaviour
 	
 	void Awake()
 	{
+		conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db";
 		if(instance != null && instance != this)
 		{
 			DestroyImmediate(gameObject);
@@ -168,7 +174,7 @@ public class SocketListener : MonoBehaviour
 		
 		// Read data from the client socket. 
 		int bytesRead = handler.EndReceive(ar);
-		
+		Debug.Log("bytesRead " + bytesRead);
 		if (bytesRead > 0) {
 			// There  might be more data, so store the data received so far.
 			state.sb.Append(Encoding.ASCII.GetString(
@@ -236,18 +242,193 @@ public class SocketListener : MonoBehaviour
 		//parse strings here. Example:
 		if(token[0] == "Login")
 		{
-			Send(client, "name: " + token[1] + "  ps: " + token[2]);
+			DataBaseLogin(token[1], token[2]);
 			
 		}
 		else if(token[0] == "Register")
 		{
-			//
+			DataBaseRegister(token[1], token[2]);
 		}
 		else if(token[0] == "This")
 		{
 			Send(client, message);
 		}
 		
+	}
+	
+	private void DataBaseLogin(string name, string password)
+	{
+		bool loginok = false;
+		//string conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db"; //Path to database.
+		IDbConnection dbconn;
+		dbconn = (IDbConnection) new SqliteConnection(conn);
+		dbconn.Open(); //Open connection to the database.
+		IDbCommand dbcmd = dbconn.CreateCommand();
+		
+		
+		string inusername = name;
+		string inpassword = password;
+		string sqlQuery = "SELECT ID, username, password " + "FROM Users " + "WHERE username == '" + inusername + "' AND password == '" + inpassword + "'";
+		dbcmd.CommandText = sqlQuery;
+		IDataReader reader = dbcmd.ExecuteReader();
+		Debug.Log ("sql " + sqlQuery);
+		
+		while (reader.Read())
+		{
+			int ID = reader.GetInt32(0);
+			string checkname = reader.GetString(1);
+			string checkpassword = reader.GetString(2);
+			
+			Debug.Log( "Database ID= "+ID+" username ="+checkname+"  password="+  checkpassword);
+			
+			if(checkname == inusername && checkpassword == inpassword){
+				Debug.Log ("Found a match");
+				loginok = true;
+			}
+			
+		}
+		
+		
+		
+		reader.Close();
+		reader = null;
+		dbcmd.Dispose();
+		dbcmd = null;
+		dbconn.Close();
+		dbconn = null;
+		GC.Collect();
+		Debug.Log("Disconnected from DB");
+		
+		//Load level when loged in
+		//			if(loginok)
+		//			{GetComponent<NetworkView> ().RPC ("LoadLevel", info.sender);}
+		//			else{
+		//				Debug.Log("Failed Login");
+		//			}
+	}
+	
+	private void DataBaseRegister(string username, string password)
+	{
+		bool checkUsername = isTaken(username);
+		
+		if(!checkUsername)
+		{
+		//	string conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db"; //Path to database.
+			IDbConnection dbconn;
+			dbconn = (IDbConnection) new SqliteConnection(conn);
+			dbconn.Open(); //Open connection to the database.
+			IDbCommand dbcmd = dbconn.CreateCommand();
+			
+			int nextuserid = getNextUserID();
+			string sqlQuery = "INSERT INTO USERS (ID, username, password) VALUES ("+nextuserid+", '"+username+"', '"+password+"')";
+			dbcmd.CommandText = sqlQuery;
+			IDataReader reader = dbcmd.ExecuteReader();
+			
+			
+			Debug.Log( "user inserted into database" );
+			
+			reader.Close();
+			reader = null;
+			dbcmd.Dispose();
+			dbcmd = null;
+			dbconn.Close();
+			dbconn = null;
+			GC.Collect();
+			Debug.Log("Disconnected from DB");
+		}
+		else
+		{
+			Debug.Log("User name already exists");
+		}
+	}
+	
+	bool isTaken(string username)
+	{
+		bool returnval = false;
+		//string conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db"; //Path to database.
+		IDbConnection dbconn;
+		dbconn = (IDbConnection)new SqliteConnection (conn);
+		dbconn.Open (); //Open connection to the database.
+		IDbCommand dbcmd = dbconn.CreateCommand ();
+		
+		
+		int countamount = 0;
+		string sqlQuery = "SELECT COUNT(*) FROM Users WHERE username =='"+username+"'";
+		dbcmd.CommandText = sqlQuery;
+		IDataReader reader = dbcmd.ExecuteReader ();
+		
+		while (reader.Read()) {
+			countamount = reader.GetInt32 (0);
+			Debug.Log ("users found is "+countamount);
+		}
+		
+		
+		reader.Close ();
+		reader = null;
+		dbcmd.Dispose ();
+		dbcmd = null;
+		dbconn.Close ();
+		dbconn = null;
+		GC.Collect ();
+		Debug.Log ("Disconnected from DB");
+		
+		if (countamount > 0) {
+			returnval = true;
+		}
+		return returnval;
+		
+	}
+	
+	int getNextUserID()
+	{
+		//string conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db"; //Path to database.
+		IDbConnection dbconn;
+		dbconn = (IDbConnection)new SqliteConnection (conn);
+		dbconn.Open (); //Open connection to the database.
+		IDbCommand dbcmd = dbconn.CreateCommand ();
+		
+		
+		int nextID = 999999;
+		string sqlQuery = "SELECT COUNT(*) FROM Users";
+		dbcmd.CommandText = sqlQuery;
+		IDataReader reader = dbcmd.ExecuteReader ();
+		
+		while (reader.Read()) {
+			nextID = reader.GetInt32 (0);
+			nextID++;
+			Debug.Log ("nextID is "+nextID);
+		}
+		
+		
+		reader.Close ();
+		reader = null;
+		dbcmd.Dispose ();
+		dbcmd = null;
+		dbconn.Close ();
+		dbconn = null;
+		GC.Collect ();
+		Debug.Log ("Disconnected from DB");
+		return nextID;
+	}
+	
+	public string Md5Sum(string strToEncrypt)
+	{
+		System.Text.UTF8Encoding ue = new System.Text.UTF8Encoding();
+		byte[] bytes = ue.GetBytes(strToEncrypt);
+		
+		// encrypt bytes
+		System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+		byte[] hashBytes = md5.ComputeHash(bytes);
+		
+		// Convert the encrypted bytes back to a string (base 16)
+		string hashString = "";
+		
+		for (int i = 0; i < hashBytes.Length; i++)
+		{
+			hashString += System.Convert.ToString(hashBytes[i], 16).PadLeft(2, '0');
+		}
+		
+		return hashString.PadLeft(32, '0');
 	}
 }
 

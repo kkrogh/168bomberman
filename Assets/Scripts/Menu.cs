@@ -16,6 +16,7 @@ public class Menu : MonoBehaviour {
 	public string password = "";
 	bool RegisterUI = false;
 	bool LoginUI = false;
+	
 
 	void OnGUI()
 	{
@@ -133,7 +134,7 @@ public class Menu : MonoBehaviour {
 				string checkname = reader.GetString(1);
 				string checkpassword = reader.GetString(2);
 				
-				Debug.Log( "ID= "+ID+" username ="+checkname+"  password="+  checkpassword);
+				Debug.Log( "Database ID= "+ID+" username ="+checkname+"  password="+  checkpassword);
 				
 				if(checkname == inusername && checkpassword == inpassword){
 					Debug.Log ("Found a match");
@@ -171,16 +172,16 @@ public class Menu : MonoBehaviour {
 	}
 
 
-	[RPC]
-	void LoadLevel()
-	{
-		if (Network.isClient) {
-			if(Application.loadedLevel == 0)
-			{
-				Application.LoadLevel ("MainGame");
-			}
-		}
-	}
+//	[RPC]
+//	void LoadLevel()
+//	{
+//		if (Network.isClient) {
+//			if(Application.loadedLevel == 0)
+//			{
+//				Application.LoadLevel ("MainGame");
+//			}
+//		}
+//	}
 
 
 	[RPC]
