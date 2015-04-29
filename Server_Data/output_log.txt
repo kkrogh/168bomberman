@@ -1,0 +1,49 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\Mono.Data.Sqlite.dll (this message is harmless)
+Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\Mono.Data.Sqlite.dll into Unity Child Domain
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\Mono.Data.SqliteClient.dll (this message is harmless)
+Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\Mono.Data.SqliteClient.dll into Unity Child Domain
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.DataSetExtensions.dll (this message is harmless)
+Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.DataSetExtensions.dll into Unity Child Domain
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.dll (this message is harmless)
+Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.dll into Unity Child Domain
+- Completed reload, in  0.223 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Configuration.dll (this message is harmless)
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Xml.dll (this message is harmless)
+SocketException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+  at System.Net.Sockets.Socket.Bind (System.Net.EndPoint local_end) [0x00000] in <filename unknown>:0 
+  at SocketListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Waiting for a connection..
+Waiting for a connection..
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+InvalidOperationException: Operation is not valid due to the current state of the object
+  at System.Net.Sockets.Socket.BeginAccept (System.AsyncCallback callback, System.Object state) [0x00000] in <filename unknown>:0 
+  at SocketListener.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+

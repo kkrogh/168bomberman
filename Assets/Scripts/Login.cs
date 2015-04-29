@@ -48,17 +48,24 @@ public class Login : MonoBehaviour
 					StateObject send_so = new StateObject();
 					send_so.workSocket = AsynchronousClient.client;
 					AsynchronousClient.Send(AsynchronousClient.client,content, send_so);
-					send_so.sendDone.WaitOne(5000);
+					send_so.sendDone.WaitOne(3000);
 					
 					StateObject recv_so = new StateObject();
 					recv_so.workSocket = AsynchronousClient.client;
 					
 					AsynchronousClient.Receive(recv_so);
-					recv_so.receiveDone.WaitOne(5000);
+					recv_so.receiveDone.WaitOne(3000);
 					Debug.Log("Response received : " + recv_so.response);
 					
 					username = "";
 					password = "";
+					
+					
+					if(recv_so.response == "LoadLevel")
+					{
+						Application.LoadLevel("MainGame");
+					}
+					
 				}
 				
 				if(GUI.Button (new Rect(100,200,110,25),"Back"))

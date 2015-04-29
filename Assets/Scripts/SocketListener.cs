@@ -98,6 +98,14 @@ public class SocketListener : MonoBehaviour
 		//allDone.WaitOne();
 	}
 	
+	void OnGUI()
+	{
+	//Template
+		GUI.Label(new Rect(5,5,100,25), "Server Running");
+	}
+	
+	
+	
 	public static void StartListening() {
 		// Data buffer for incoming data.
 		byte[] bytes = new Byte[1024];
@@ -242,8 +250,11 @@ public class SocketListener : MonoBehaviour
 		//parse strings here. Example:
 		if(token[0] == "Login")
 		{
-			DataBaseLogin(token[1], token[2]);
-			
+			bool loginOk = DataBaseLogin(token[1], token[2]);
+			if(loginOk)
+			{
+				Send(client, "LoadLevel<EOF>");
+			}
 		}
 		else if(token[0] == "Register")
 		{
@@ -256,7 +267,7 @@ public class SocketListener : MonoBehaviour
 		
 	}
 	
-	private void DataBaseLogin(string name, string password)
+	private bool DataBaseLogin(string name, string password)
 	{
 		bool loginok = false;
 		//string conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db"; //Path to database.
@@ -305,6 +316,7 @@ public class SocketListener : MonoBehaviour
 		//			else{
 		//				Debug.Log("Failed Login");
 		//			}
+		return loginok;
 	}
 	
 	private void DataBaseRegister(string username, string password)
