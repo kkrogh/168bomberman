@@ -35,7 +35,7 @@ public class AsynchronousClient : MonoBehaviour{
 	public static AsynchronousClient instance;
 	public static Socket client;
 	
-	public string ipStr = "127.0.0.1";
+	public string ipStr = "192.168.0.16";
 	private const int port = 11000;
 	static string[] stringSeparators = new string[] { "<EOF>" };
 	
@@ -101,7 +101,7 @@ public class AsynchronousClient : MonoBehaviour{
 //		
 //	}
 	
-	public void StartClient() {
+	public void StartClient(string ipAdd) {
 		// Connect to a remote device.
 		try {
 		Debug.Log("Client Connect Attempt");
@@ -110,7 +110,7 @@ public class AsynchronousClient : MonoBehaviour{
 			// remote device is "host.contoso.com".
 			IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
 			//IPAddress ipAddress = ipHostInfo.AddressList[0];
-			IPAddress ipAddress = IPAddress.Parse(ipStr);
+			IPAddress ipAddress = IPAddress.Parse(ipAdd);
 			IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);
 			
 			// Create a TCP/IP socket.

@@ -13,6 +13,7 @@ public class Login : MonoBehaviour
 	public string password = "";
 	bool registerUI = false;
 	bool loginUI = false;
+	public string ipAdd = "192.168.0.16";
 	// Use this for initialization
 	void Start () 
 	{
@@ -25,21 +26,24 @@ public class Login : MonoBehaviour
 	{
 		if(AsynchronousClient.client == null || !AsynchronousClient.client.Connected)
 		{
-			if(GUI.Button(new Rect(100,100,100,25),"Connect to Server"))
+			GUI.Label(new Rect(125, 260, 100, 25),  "IP Address: ");
+			ipAdd = GUI.TextArea (new Rect(225,260,110,25),ipAdd);
+			if(GUI.Button(new Rect(225,290,150,25),"Connect to Server"))
 			{
-				clientInstance.StartClient();
+				clientInstance.StartClient(ipAdd);
 			}
 		}
 		else
 		{
 			if(loginUI == true && registerUI == false)
 			{
-				GUI.Label(new Rect(100, 125, 100, 25), "User Name: ");
-				username = GUI.TextArea (new Rect(200,125,110,25),username);
-				GUI.Label(new Rect(100, 150, 100, 25), "Password: ");
-				password = GUI.TextArea(new Rect(200,150,110,25),password);
+				GUI.Label(new Rect(125, 230, 500, 25),  "Please enter your user name and password");
+				GUI.Label(new Rect(125, 275, 100, 25),  "User Name: ");
+				username = GUI.TextArea (new Rect(225,275,110,25),username);
+				GUI.Label(new Rect(125, 325, 100, 25), "Password: ");
+				password = GUI.TextArea(new Rect(225,325,110,25),password);
 				
-				if(GUI.Button (new Rect(100,175,110,25),"Login"))
+				if(GUI.Button (new Rect(225,365,110,25),"Login"))
 				{
 					string hashed = Md5Sum(password);
 					string content = "Login " + username + " " + hashed + " <EOF>";
@@ -68,7 +72,7 @@ public class Login : MonoBehaviour
 					
 				}
 				
-				if(GUI.Button (new Rect(100,200,110,25),"Back"))
+				if(GUI.Button (new Rect(225,390,110,25),"Back"))
 				{
 					loginUI = false;
 					username = "";
@@ -77,12 +81,13 @@ public class Login : MonoBehaviour
 			}
 			else if(loginUI == false && registerUI == true)
 			{
-				GUI.Label(new Rect(100, 125, 100, 25), "User Name: ");
-				username = GUI.TextArea (new Rect(200,125,110,25),username);
-				GUI.Label(new Rect(100, 150, 100, 25), "Password: ");
-				password = GUI.TextArea(new Rect(200,150,110,25),password);
+				GUI.Label(new Rect(125, 230, 500, 25),  "Please enter your user name and password");
+				GUI.Label(new Rect(125, 275, 100, 25),  "User Name: ");
+				username = GUI.TextArea (new Rect(225,275,110,25),username);
+				GUI.Label(new Rect(125, 325, 100, 25), "Password: ");
+				password = GUI.TextArea(new Rect(225,325,110,25),password);
 				
-				if(GUI.Button (new Rect(100,175,110,25),"Register"))
+				if(GUI.Button (new Rect(225,365,110,25),"Register"))
 				{
 					string hashed = Md5Sum(password);
 					string content = "Register " + username + " " + hashed + " <EOF>";
@@ -104,7 +109,7 @@ public class Login : MonoBehaviour
 					password = "";
 				}
 				
-				if(GUI.Button (new Rect(100,200,110,25),"Back"))
+				if(GUI.Button (new Rect(225,390,110,25),"Back"))
 				{
 					registerUI = false;
 					username = "";
@@ -113,11 +118,11 @@ public class Login : MonoBehaviour
 			}
 			else
 			{
-				if(GUI.Button(new Rect(100,100,100,25),"Login"))
+				if(GUI.Button(new Rect(225,250,100,25),"Login"))
 				{
 					loginUI =true;
 				}
-				if(GUI.Button(new Rect(100,125,100,25),"Regiser"))
+				if(GUI.Button(new Rect(225,275,100,25),"Regiser"))
 				{
 					registerUI = true;
 				}
