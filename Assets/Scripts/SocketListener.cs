@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using Mono.Data.Sqlite;
 using System.Data;
 
-
 // State object for reading client data asynchronously
 //public class StateObject {
 //	// Client  socket.
@@ -21,17 +20,26 @@ using System.Data;
 //	// Received data string.
 //	public StringBuilder sb = new StringBuilder();  
 //}
+public class ServerAction
+{
+	public static bool accepted = true;
+	public static Socket logedClient = null;
+	
+}
 
 public class SocketListener : MonoBehaviour 
 {
+
 	public static SocketListener instance;
 	// Thread signal.
 	public static ManualResetEvent allDone = new ManualResetEvent(false);
 	public static List<Socket> clients = new List<Socket>();
+	public static List<Socket> logedClients = new List<Socket>();
+	private static bool accepted = true;
 	
 	public string conn;
+	public ServerLevelManager levelManager;
 	
-	private static bool accepted = true;
 	
 	byte[] bytes = new Byte[1024];
 	
@@ -57,6 +65,8 @@ public class SocketListener : MonoBehaviour
 		
 		instance = this;
 		DontDestroyOnLoad(gameObject);
+		
+		levelManager = GameObject.Find("MainLevel").GetComponent<ServerLevelManager>();
 	}
 	
 	
@@ -84,15 +94,41 @@ public class SocketListener : MonoBehaviour
 		// Set the event to nonsignaled state.
 		allDone.Reset();
 		
-		if(accepted)
+		if(ServerAction.accepted)
 		{
-			accepted = false;
-			Console.WriteLine("Waiting for a connection..");
-			Debug.Log("Waiting for a connection..");
-			listener.BeginAccept( 
-			                     new AsyncCallback(AcceptCallback),
-			                     listener );
+			if(ServerAction.accepted)
+			{
+				ServerAction.accepted = false;
+				Console.WriteLine("Waiting for a connection..");
+				Debug.Log("Waiting for a connection..");
+				listener.BeginAccept( 
+				                     new AsyncCallback(AcceptCallback),
+				                     listener );
+			}
 		}
+		
+		if(ServerAction.logedClient != null)
+		{
+			logedClients.Add(ServerAction.logedClient);
+			Send(ServerAction.logedClient, "LoadLevel<EOF>");
+			levelManager.AddPlayer(ServerAction.logedClient);
+			ServerAction.logedClient = null;
+		}
+		
+	
+		
+//		if(logedClients.Count > 2)
+//		{
+//			foreach(Socket clientObj in logedClients)
+//			{
+//				
+//			}
+////			if(Application.loadedLevelName != "ServerMainGame")
+////			{
+////				Application.LoadLevel("ServerMainGame");
+////			}
+//		}
+		
 
 		// Wait until a connection is made before continuing.
 		//allDone.WaitOne();
@@ -101,7 +137,10 @@ public class SocketListener : MonoBehaviour
 	void OnGUI()
 	{
 	//Template
-		GUI.Label(new Rect(5,5,100,25), "Server Running");
+		if(listener != null)
+		{
+			GUI.Label(new Rect(5,5,100,25), "Server Running");
+		}
 	}
 	
 	
@@ -157,7 +196,7 @@ public class SocketListener : MonoBehaviour
 		// Get the socket that handles the client request.
 		Socket listener = (Socket) ar.AsyncState;
 		Socket handler = listener.EndAccept(ar);
-		accepted = true;	//static
+		ServerAction.accepted = true;	//static
 		
 		// Create the state object.
 		StateObject state = new StateObject();
@@ -182,7 +221,7 @@ public class SocketListener : MonoBehaviour
 		
 		// Read data from the client socket. 
 		int bytesRead = handler.EndReceive(ar);
-		Debug.Log("bytesRead " + bytesRead);
+		Debug.Log("bytesRead at ReadCallBack" + bytesRead);
 		if (bytesRead > 0) {
 			// There  might be more data, so store the data received so far.
 			state.sb.Append(Encoding.ASCII.GetString(
@@ -224,6 +263,7 @@ public class SocketListener : MonoBehaviour
 		// Convert the string data to byte data using ASCII encoding.
 		byte[] byteData = Encoding.ASCII.GetBytes(data);
 		
+		Debug.Log("Sent: " + data);
 		// Begin sending the data to the remote device.
 		handler.BeginSend(byteData, 0, byteData.Length, 0,
 		                  new AsyncCallback(SendCallback), handler);
@@ -238,6 +278,7 @@ public class SocketListener : MonoBehaviour
 			int bytesSent = handler.EndSend(ar);
 			Console.WriteLine("Sent {0} bytes to client.", bytesSent);
 			Debug.Log("Sent " + bytesSent + " bytes to client.");
+			
 		} catch (Exception e) {
 			Console.WriteLine(e.ToString());
 		}
@@ -246,6 +287,7 @@ public class SocketListener : MonoBehaviour
 	//Handle all client messages here
 	public void MessageHandler(Socket client, string message)
 	{
+		Debug.Log("MessageHandler: " + message);
 		string[] token = message.Split(new Char[]{' '});
 		//parse strings here. Example:
 		if(token[0] == "Login")
@@ -253,12 +295,23 @@ public class SocketListener : MonoBehaviour
 			bool loginOk = DataBaseLogin(token[1], token[2]);
 			if(loginOk)
 			{
-				Send(client, "LoadLevel<EOF>");
+				ServerAction.logedClient = client;
+				
+				//serverState = ServerState.PlayingMainGame;
 			}
 		}
 		else if(token[0] == "Register")
 		{
 			DataBaseRegister(token[1], token[2]);
+		}
+		else if(token[0] == "PlayerPos")
+		{
+			Debug.Log("Handling position");
+			PlayerAction action = new PlayerAction();
+			action.client = client;
+			action.actionStr = "PlayerPos " + token[1] + " " + token[2];
+			ServerLevelManager.actionQueue.Enqueue(action);
+	
 		}
 		else if(token[0] == "This")
 		{
@@ -442,5 +495,6 @@ public class SocketListener : MonoBehaviour
 		
 		return hashString.PadLeft(32, '0');
 	}
+	
 }
 

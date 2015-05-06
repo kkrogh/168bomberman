@@ -51,12 +51,14 @@
      <Compile Include="Assets\Scripts\Bomb.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\Client.cs" />
+     <Compile Include="Assets\Scripts\ClientLevelManager.cs" />
      <Compile Include="Assets\Scripts\Controls.cs" />
      <Compile Include="Assets\Scripts\DestructibleBlock.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\Login.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\Server.cs" />
+     <Compile Include="Assets\Scripts\ServerLevelManager.cs" />
      <Compile Include="Assets\Scripts\SocketListener.cs" />
      <Compile Include="Assets\Scripts\StateObject.cs" />
  <Reference Include="UnityEngine.UI">
