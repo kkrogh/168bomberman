@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+using System.Text;
+using UnityEngine;
 using System.Collections;
 
 public class Controls : MonoBehaviour {
@@ -40,7 +45,29 @@ public class Controls : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.LeftArrow)) {
 				animator.SetTrigger ("Left");
 			}
-
+		
+			bool moved = false;
+			if (Input.GetKey (KeyCode.UpArrow)) {
+				//transform.Translate(new Vector2(0,runSpeed*Time.deltaTime));
+				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (0, 1) * runSpeed * Time.deltaTime);
+				moved = true;
+				
+			}
+			if (Input.GetKey (KeyCode.DownArrow)) {
+				//transform.Translate(new Vector2(0,-runSpeed*Time.deltaTime));
+				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (0, -1) * runSpeed * Time.deltaTime);
+				moved = true;
+			}
+			if (Input.GetKey (KeyCode.LeftArrow)) {
+				//transform.Translate(new Vector2(-runSpeed*Time.deltaTime,0));
+				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (-1, 0) * runSpeed * Time.deltaTime);
+				moved = true;
+			}
+			if (Input.GetKey (KeyCode.RightArrow)) {
+				//transform.Translate(new Vector2(runSpeed*Time.deltaTime,0));
+				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (1, 0) * runSpeed * Time.deltaTime);
+				moved = true;
+			}
 
 
 
@@ -82,11 +109,26 @@ public class Controls : MonoBehaviour {
 					DropBomb ();
 					bomberman.liveBombs++;
 				}
+				if (bomberman.liveBombs < bomberman.bombLimit && !bombPlaced) {
+					DropBomb ();
+					bomberman.liveBombs++;
+				}
+			
 
 			}
+		
+		
+			if (moved) {
+				string content = "PlayerPos " + this.transform.position.x.ToString () + " " + this.transform.position.y.ToString () + " <EOF>";
+				StateObject send_so = new StateObject ();
+				send_so.workSocket = AsynchronousClient.client;
+				AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
+			
+			}
 		}
-
 	}
+
+
 
 
 	void DropBomb()
