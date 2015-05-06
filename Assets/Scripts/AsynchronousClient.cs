@@ -30,6 +30,11 @@ using System.Collections;
 //	public String response = String.Empty;
 //}
 
+public class ClientAction
+{
+	public static bool received = true;
+}
+
 public class AsynchronousClient : MonoBehaviour{
 	// The port number for the remote device.
 	public static AsynchronousClient instance;
@@ -63,6 +68,15 @@ public class AsynchronousClient : MonoBehaviour{
 		
 	}
 	
+//	public static void MessageHandler(string message)
+//	{
+//		string[] token = message.Split(new Char[]{' '});
+//		
+//		if(token[0] == "LoadLevel")
+//		{
+//		
+//		}
+//	}
 //	void OnGUI()
 //	{
 //		if(GUI.Button(new Rect(100,100,100,25), "Start Client"))
