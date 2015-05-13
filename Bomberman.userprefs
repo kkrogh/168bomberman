@@ -1,14 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ClientLevelManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ServerScripts\ServerCharacter.cs">
     <Files>
-      <File FileName="Assets\Scripts\SocketListener.cs" Line="224" Column="54" />
-      <File FileName="Assets\Scripts\AsynchronousClient.cs" Line="35" Column="37" />
-      <File FileName="Assets\Scripts\Login.cs" Line="59" Column="6" />
-      <File FileName="Assets\Scripts\ServerLevelManager.cs" Line="106" Column="44" />
+      <File FileName="Assets\Scripts\ClientLevelManager.cs" Line="62" Column="4" />
+      <File FileName="Assets\Scripts\SocketListener.cs" Line="185" Column="48" />
+      <File FileName="Assets\Scripts\AsynchronousClient.cs" Line="141" Column="43" />
+      <File FileName="Assets\Scripts\Login.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ServerLevelManager.cs" Line="82" Column="5" />
       <File FileName="Assets\Scripts\StateObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ClientLevelManager.cs" Line="28" Column="45" />
-      <File FileName="Assets\Scripts\Controls.cs" Line="83" Column="4" />
+      <File FileName="Assets\Scripts\Controls.cs" Line="157" Column="34" />
+      <File FileName="Assets\Scripts\Bomb.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character.cs" Line="69" Column="1" />
+      <File FileName="Assets\Scripts\ServerScripts\ServerCharacter.cs" Line="56" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

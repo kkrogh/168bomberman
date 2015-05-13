@@ -20,7 +20,7 @@ Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\
 Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.DataSetExtensions.dll into Unity Child Domain
 Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.dll (this message is harmless)
 Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.dll into Unity Child Domain
-- Completed reload, in  0.253 seconds
+- Completed reload, in  0.243 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -34,46 +34,3 @@ Waiting for a connection..
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-AcceptCallBack
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Waiting for a connection..
-Waiting for a connection..
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-ReadCallback
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-bytesRead 50
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Read 50 bytes from socket. 
- Data : Login mario e9da82f4c252e7f1745ae88f2624fc07 <EOF>
-
-
-
-Read 50 bytes from socket. 
- Data : Login mario e9da82f4c252e7f1745ae88f2624fc07 <EOF>
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Transactions.dll (this message is harmless)
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/.\C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/.\C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/libC:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/.\libC:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/libC:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/.\C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/.\C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/libC:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/.\libC:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/libC:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/.\C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/.\C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/libC:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/.\libC:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll
-Fallback handler could not load library C:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Mono/libC:/Users/David/Documents/UnityProjects/Bomberman/Server_Data/Plugins/sqlite3.dll

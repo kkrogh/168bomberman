@@ -12,9 +12,12 @@ public class Character : MonoBehaviour {
 	private Animator animator;
 	public int deathCount;
 	public bool dying;
+	public GameObject bomb;
+	
 	void Awake()
 	{
 		animator = GetComponent<Animator> ();
+		bomb = Resources.Load("Bomb") as GameObject;
 		deathCount = 0;
 		dying = false;
 	}
@@ -53,5 +56,13 @@ public class Character : MonoBehaviour {
 		}
 	}
 
-
+	public void DropBomb(float x, float y)
+	{
+		
+		Vector2 bombPos = new Vector2(x,y);
+		
+		GameObject obj = Instantiate (bomb, bombPos,transform.rotation) as GameObject;
+		Bomb bombObj = obj.GetComponent<Bomb> ();
+		bombObj.owner = this;
+	}
 }

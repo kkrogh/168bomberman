@@ -59,16 +59,11 @@ public class Login : MonoBehaviour
 					
 					AsynchronousClient.Receive(recv_so);
 					recv_so.receiveDone.WaitOne(3000);
-					Debug.Log("Response received : " + recv_so.response);
 					
 					username = "";
 					password = "";
 					
 					
-					if(recv_so.response == "LoadLevel")
-					{
-						Application.LoadLevel("MainGame");
-					}
 					
 				}
 				

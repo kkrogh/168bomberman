@@ -30,20 +30,44 @@ using System.Collections;
 //	public String response = String.Empty;
 //}
 
+public class PlayerInfo
+{
+	public int playerNum;
+	public float x;
+	public float y;
+	public bool updated = false;
+}
+
+public class BombInfo
+{
+	public int playerNum;
+	public float x;
+	public float y;
+	public bool droppedBomb = false;
+}
+
 public class ClientAction
 {
 	public static bool received = true;
+	public static bool loadLevel = false;
+	public static int playerNum = 0;
+	public static int logedEnemyNum = 0;
+	public static PlayerInfo playerInfo = new PlayerInfo();
+	public static BombInfo bombInfo = new BombInfo();
 }
 
 public class AsynchronousClient : MonoBehaviour{
+
+public static string guiDebugStr = "";
 	// The port number for the remote device.
 	public static AsynchronousClient instance;
 	public static Socket client;
 	
 	public string ipStr = "192.168.0.16";
 	private const int port = 11000;
-	static string[] stringSeparators = new string[] { "<EOF>" };
+	private string message;
 	
+	private static string[] stringSeparators = new string[] { "<EOF>" };
 	private static bool received = true;
 	
 	void Awake()
@@ -65,18 +89,90 @@ public class AsynchronousClient : MonoBehaviour{
 	
 	void Update()
 	{
+		if(ClientAction.loadLevel)
+		{
+			Application.LoadLevel("MainGame");
+			ClientAction.loadLevel = false;
+		}
+		
+		if(ClientAction.playerNum > 0)
+		{
+			ClientLevelManager.instance.LoadPlayer(ClientAction.playerNum);
+			ClientAction.playerNum = 0;
+		}
+		
+		if(ClientAction.logedEnemyNum > 0)
+		{
+			ClientLevelManager.instance.AddEnemy(ClientAction.logedEnemyNum);
+			ClientAction.logedEnemyNum = 0;
+		}
+		
+		if(ClientAction.playerInfo.updated)
+		{			
+			ClientLevelManager.instance.SetPlayerPos(ClientAction.playerInfo.playerNum,
+													 ClientAction.playerInfo.x,
+													 ClientAction.playerInfo.y);
+													 
+			ClientAction.playerInfo.updated = false;
+		}
+		
+		if(ClientAction.bombInfo.droppedBomb)
+		{
+			ClientLevelManager.instance.ClientDropBomb(ClientAction.bombInfo.playerNum,
+													   ClientAction.bombInfo.x,
+													   ClientAction.bombInfo.y);
+			ClientAction.bombInfo.droppedBomb = false;
+		}
 		
 	}
 	
-//	public static void MessageHandler(string message)
-//	{
-//		string[] token = message.Split(new Char[]{' '});
-//		
-//		if(token[0] == "LoadLevel")
-//		{
-//		
-//		}
-//	}
+	void OnGUI()
+	{
+		GUI.Label(new Rect(50, 50, 200, 50),  "ThreadExeption: " + guiDebugStr);
+	}
+	
+	public void MessageHandler(string message)
+	{
+		try
+		{
+		//guiDebugStr = message;
+		Debug.Log("ClientMessageHandler : " + message);
+		string[] token = message.Split(new Char[]{' '});
+		
+		if(token[0] == "LoadLevel")
+		{
+			ClientAction.loadLevel = true;
+		}
+		if(token[0] == "PlayerNum")
+		{
+			ClientAction.playerNum = int.Parse(token[1]);
+			//ClientLevelManager.instance.SetPlayerStartPosition(1);
+		}
+		if(token[0] == "NewPlayer")
+		{
+			ClientAction.logedEnemyNum = int.Parse(token[1]);
+		}
+		if(token[0] == "EnemyPos")
+		{
+			ClientAction.playerInfo.playerNum = int.Parse(token[1]);
+			ClientAction.playerInfo.x = float.Parse(token[2]);
+			ClientAction.playerInfo.y = float.Parse(token[3]);
+			ClientAction.playerInfo.updated = true;
+		}
+		if(token[0] == "BombDropped")
+		{
+			ClientAction.bombInfo.playerNum = int.Parse(token[1]);
+			ClientAction.bombInfo.x = float.Parse(token[2]);
+			ClientAction.bombInfo.y = float.Parse(token[3]);
+			ClientAction.bombInfo.droppedBomb = true;
+		}
+		
+		}
+		catch(Exception e)
+		{
+			guiDebugStr = e.ToString();
+		}
+	}
 //	void OnGUI()
 //	{
 //		if(GUI.Button(new Rect(100,100,100,25), "Start Client"))
@@ -199,7 +295,7 @@ public class AsynchronousClient : MonoBehaviour{
 		try {
 			// Retrieve the state object and the client socket 
 			// from the asynchronous state object.
-			
+			ClientAction.received = true;
 			StateObject state = (StateObject) ar.AsyncState;
 			Socket client = state.workSocket;
 			
@@ -212,14 +308,22 @@ public class AsynchronousClient : MonoBehaviour{
 				string content = state.sb.ToString();
 				
 				String[] message = content.Split(stringSeparators, StringSplitOptions.None);
-				if (message.Length == 2)
+				if (message.Length > 1)
 				{
 					state.receiveDone.Set();
 					state.response = message[0];
 					
+					
+					instance.MessageHandler(message[0]);
+					
 				//	state.workSocket.Shutdown(SocketShutdown.Both);
 				//	state.workSocket.Close();
 					
+					StateObject newstate = new StateObject();
+					newstate.workSocket = client;
+					// Call BeginReceive with a new state object
+					client.BeginReceive(newstate.buffer, 0, StateObject.BufferSize, 0,
+					                     new AsyncCallback(ReceiveCallback), newstate);
 				}
 				else
 				{
@@ -227,13 +331,17 @@ public class AsynchronousClient : MonoBehaviour{
 					client.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
 					                    new AsyncCallback(ReceiveCallback), state);
 				}
-			} else {
-				Console.WriteLine("Connection close has been requested.");
+			} 
+			else 
+			{
+				guiDebugStr = "Connection close has been requested";
+				//Console.WriteLine("Connection close has been requested.");
 				// Signal that all bytes have been received.
 				
 			}
 		} catch (Exception e) {
-			Console.WriteLine(e.ToString());
+			//Console.WriteLine(e.ToString());
+			guiDebugStr = e.ToString();
 		}
 	}
 	
@@ -262,6 +370,8 @@ public class AsynchronousClient : MonoBehaviour{
 			Console.WriteLine(e.ToString());
 		}
 	}
+	
+	
 	
 	public bool isConnected()
 	{

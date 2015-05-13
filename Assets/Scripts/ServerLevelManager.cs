@@ -11,12 +11,14 @@ using System.Data;
 public class ServerPlayer
 {
 	public GameObject bomberman;
+	public int playerNum;
 	public Socket client;
 }
 
 public struct PlayerAction
 {
 	public Socket client;
+	public int playerNum;
 	public string actionStr;
 	
 }
@@ -54,30 +56,48 @@ public class ServerLevelManager : MonoBehaviour
 			string[] token = action.actionStr.Split(new Char[]{' '});
 			
 			if(token[0] == "PlayerPos")
-			{
-				foreach(ServerPlayer obj in playerList)
+			{	
+				for(int i = 0; i < playerList.Count; i++)
 				{
-					if(obj.client == action.client)
+					if(playerList[i].client == action.client)
 					{
 						float x = float.Parse(token[1]);
 						float y = float.Parse(token[2]);
-						obj.bomberman.transform.position = new Vector2(x,y);
+						playerList[i].bomberman.transform.position = new Vector2(x,y);
 						
+					}
+					else
+					{
+						int movedPlayerNum = action.playerNum;
+						string message = "EnemyPos " + movedPlayerNum + " " + token[1] + " " + token[2] + " <EOF>";
+						SocketListener.Send(playerList[i].client, message);
 					}
 
 				}	
+			}
+			else if(token[0] == "BombDropped")
+			{
+				Debug.Log("action: " + action.actionStr);
+				float x = float.Parse(token[1]);
+				float y = float.Parse(token[2]);
 				
-//				foreach(ServerPlayer obj in playerList)
-//				{
-//					if(obj.client != action.client)
-//					{
-//						float x = float.Parse(token[1]);
-//						float y = float.Parse(token[2]);
-//						obj.bomberman.transform.position = new Vector2(x,y);
-//						
-//					}
-//					
-//				}	
+				int index = action.playerNum - 1;
+				ServerCharacter serverChar = playerList[index].bomberman.GetComponent<ServerCharacter>();
+				
+				
+				serverChar.DropBomb(x, y);
+				
+				for(int i = 0; i < playerList.Count; i++)
+				{
+					
+					if(playerList[i].client != action.client)
+					{
+						int movedPlayerNum = action.playerNum;
+						string message = "BombDropped " + action.playerNum + " " + token[1] + " " + token[2] + " <EOF>";
+						SocketListener.Send(playerList[i].client, message);
+					}
+					
+				}
 			}
 			
 		}
@@ -85,25 +105,50 @@ public class ServerLevelManager : MonoBehaviour
 	}
 	
 	public void AddPlayer(Socket client)
-	{
-		ServerPlayer player = new ServerPlayer();
-		if(playerList.Count == 0)
+	{	
+		if(playerList.Count < 4)
 		{
-			player.bomberman = Instantiate(bManPrefabs[0]) as GameObject;
-		}
-		else
-		{
-			player.bomberman = Instantiate(bManPrefabs[1]) as GameObject;
-		}
-		
-		player.client = client;
-		playerList.Add(player);
-		
-		for(int i = 0; i < playerList.Count; i++)
-		{
-			string message = "PlayerNum " + (i+1) + " <EOF>";
+			int playerNum = playerList.Count+1;
+			ServerPlayer player = new ServerPlayer();
+			player.bomberman = Instantiate(bManPrefabs[playerNum-1]) as GameObject;
+			player.playerNum = playerNum;
 			
-			SocketListener.Send(playerList[i].client, message);
+			SetPlayerStartPosition(player.bomberman, playerNum);
+			
+			
+			player.client = client;
+			playerList.Add(player);
+			
+			string message = "PlayerNum " + playerNum + " <EOF>";
+			//Send player number to newest player
+			SocketListener.Send(client, message);
+			
+			for(int i = 0; i < playerList.Count; i++)
+			{	
+				if(playerList[i].client != client)
+				{
+					message = "NewPlayer " + playerNum + " <EOF>";
+					//send new player message to existing players
+					SocketListener.Send(playerList[i].client, message);
+					//send a message to the new player for each existing player
+					message = "NewPlayer " + playerList[i].playerNum + " <EOF>";
+					SocketListener.Send(client, message);
+				}
+			}
+		}
+		
+	}
+	
+	public void SetPlayerStartPosition(GameObject gameObj, int playerNum)
+	{
+		if(playerNum == 1)
+		{
+			gameObj.transform.position = new Vector2(1,9);
+		}
+		else if(playerNum == 2)
+		{
+			gameObj.transform.position = new Vector2(1,1);
 		}
 	}
+	
 }

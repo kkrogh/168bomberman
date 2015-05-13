@@ -27,12 +27,15 @@ public class Controls : MonoBehaviour {
 	void Awake()
 	{
 		animator = GetComponent<Animator> ();
+		
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void FixedUpdate () 
+	{
 		//character can not move during dying animation
-	if (!_Character.dying) {
+	if (!_Character.dying) // && ClientLevelManager.instance.gameState == GameState.Playing) 
+	{
 			if (Input.GetKeyDown (KeyCode.UpArrow)) {
 				animator.SetTrigger ("Up");
 			}
@@ -93,9 +96,15 @@ public class Controls : MonoBehaviour {
 
 			}
 
-			if (Input.GetKeyDown (KeyCode.Space)) {
+			if (Input.GetKeyDown (KeyCode.Space)) 
+			{
+				
+				
 				float x = Mathf.Round (this.transform.position.x);
 				float y = Mathf.Round (this.transform.position.y);
+				
+				
+				
 				Collider2D[] colObjs = Physics2D.OverlapCircleAll (new Vector2 (x, y), 0.3f);
 				bool bombPlaced = false;
 			
@@ -106,20 +115,24 @@ public class Controls : MonoBehaviour {
 				}
 			
 				if (bomberman.liveBombs < bomberman.bombLimit && !bombPlaced) {
-					DropBomb ();
+				
+					string content = "BombDropped " + ClientLevelManager.instance.playerNum + " " + x.ToString() + " " + y.ToString() + " <EOF>";
+					StateObject send_so = new StateObject ();
+					send_so.workSocket = AsynchronousClient.client;
+					AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
+					
+					bomberman.DropBomb (x,y);
 					bomberman.liveBombs++;
 				}
-				if (bomberman.liveBombs < bomberman.bombLimit && !bombPlaced) {
-					DropBomb ();
-					bomberman.liveBombs++;
-				}
+
 			
 
 			}
 		
 		
 			if (moved) {
-				string content = "PlayerPos " + this.transform.position.x.ToString () + " " + this.transform.position.y.ToString () + " <EOF>";
+				string content =  "PlayerPos " + ClientLevelManager.instance.playerNum + " " + this.transform.position.x.ToString () 
+								+ " " + this.transform.position.y.ToString () + " <EOF>";
 				StateObject send_so = new StateObject ();
 				send_so.workSocket = AsynchronousClient.client;
 				AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
@@ -131,19 +144,21 @@ public class Controls : MonoBehaviour {
 
 
 
-	void DropBomb()
-	{
-
-
-		float x = Mathf.Round (this.transform.position.x);
-		float y = Mathf.Round (this.transform.position.y);
-		Vector2 bombPos = new Vector2(x,y);
-
-
-		GameObject obj = Instantiate (bomb, bombPos,transform.rotation) as GameObject;
-		Bomb bombObj = obj.GetComponent<Bomb> ();
-		bombObj.owner = this.bomberman;
-	}
+//	void DropBomb()
+//	{
+//		float x = Mathf.Round (this.transform.position.x);
+//		float y = Mathf.Round (this.transform.position.y);
+//		Vector2 bombPos = new Vector2(x,y);
+//		
+//		string content = "BombDropped " + x.ToString() + " " + y.ToString() + " <EOF>";
+//		StateObject send_so = new StateObject ();
+//		send_so.workSocket = AsynchronousClient.client;
+//		AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
+//
+//		GameObject obj = Instantiate (bomb, bombPos,transform.rotation) as GameObject;
+//		Bomb bombObj = obj.GetComponent<Bomb> ();
+//		bombObj.owner = this.bomberman;
+//	}
 
 
 }

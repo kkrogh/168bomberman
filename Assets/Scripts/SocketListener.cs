@@ -23,13 +23,15 @@ using System.Data;
 public class ServerAction
 {
 	public static bool accepted = true;
-	public static Socket logedClient = null;
+	public static bool sending;
+	public static Socket logedPlayer = null;
+	
 	
 }
 
 public class SocketListener : MonoBehaviour 
 {
-
+public static string guiDebugStr = "";
 	public static SocketListener instance;
 	// Thread signal.
 	public static ManualResetEvent allDone = new ManualResetEvent(false);
@@ -72,8 +74,10 @@ public class SocketListener : MonoBehaviour
 	
 	void Start()
 	{
-		bytes = new Byte[1024];
 		
+	
+		bytes = new Byte[1024];
+		conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db";
 		// Create a TCP/IP socket.
 		listener = new Socket(AddressFamily.InterNetwork,
 		                       SocketType.Stream, ProtocolType.Tcp );
@@ -94,25 +98,26 @@ public class SocketListener : MonoBehaviour
 		// Set the event to nonsignaled state.
 		allDone.Reset();
 		
+	
 		if(ServerAction.accepted)
 		{
-			if(ServerAction.accepted)
-			{
-				ServerAction.accepted = false;
-				Console.WriteLine("Waiting for a connection..");
-				Debug.Log("Waiting for a connection..");
-				listener.BeginAccept( 
-				                     new AsyncCallback(AcceptCallback),
-				                     listener );
-			}
+			ServerAction.accepted = false;
+			Console.WriteLine("Waiting for a connection..");
+			Debug.Log("Waiting for a connection..");
+			listener.BeginAccept( 
+			                     new AsyncCallback(AcceptCallback),
+			                     listener );
 		}
+	
 		
-		if(ServerAction.logedClient != null)
+		if(ServerAction.logedPlayer != null)
 		{
-			logedClients.Add(ServerAction.logedClient);
-			Send(ServerAction.logedClient, "LoadLevel<EOF>");
-			levelManager.AddPlayer(ServerAction.logedClient);
-			ServerAction.logedClient = null;
+			levelManager.AddPlayer(ServerAction.logedPlayer);
+			ServerAction.logedPlayer = null;
+			//Send(ServerAction.logedClient, "LoadLevel<EOF>");
+			
+			//levelManager.AddPlayer(ServerAction.logedClient);
+			//ServerAction.logedClient = null;
 		}
 		
 	
@@ -134,13 +139,64 @@ public class SocketListener : MonoBehaviour
 		//allDone.WaitOne();
 	}
 	
+	//Handle all client messages here
+	public void MessageHandler(Socket client, string message)
+	{
+		guiDebugStr = message;
+		Debug.Log("ServerMessageHandler: " + message);
+		string[] token = message.Split(new Char[]{' '});
+		//parse strings here. Example:
+		if(token[0] == "Login")
+		{
+			//bool loginOk = DataBaseLogin(token[1], token[2]);
+			bool loginOk = true;
+			if(loginOk)
+			{
+				logedClients.Add(ServerAction.logedPlayer);
+				Send(client, "LoadLevel <EOF>");
+				//serverState = ServerState.PlayingMainGame;
+			}
+		}
+		else if(token[0] == "Loaded")
+		{
+			ServerAction.logedPlayer = client;
+			
+		}
+		else if(token[0] == "Register")
+		{
+			DataBaseRegister(token[1], token[2]);
+		}
+		else if(token[0] == "PlayerPos")
+		{
+			Debug.Log("Handling position");
+			PlayerAction action = new PlayerAction();
+			action.client = client;
+			action.playerNum = int.Parse(token[1]);
+			action.actionStr = "PlayerPos " + token[2] + " " + token[3];
+			ServerLevelManager.actionQueue.Enqueue(action);
+			
+		}
+		else if(token[0] == "BombDropped")
+		{
+			PlayerAction action = new PlayerAction();
+			action.client = client;
+			action.playerNum = int.Parse(token[1]);
+			action.actionStr = "BombDropped " + token[2] + " " + token[3];
+			ServerLevelManager.actionQueue.Enqueue(action);
+		}
+		
+	}
+	
 	void OnGUI()
 	{
 	//Template
+		
 		if(listener != null)
 		{
 			GUI.Label(new Rect(5,5,100,25), "Server Running");
 		}
+		
+		GUI.Label(new Rect(5,30,1000,25), "ServerMessageHandler: " + guiDebugStr);
 	}
 	
 	
@@ -230,13 +286,14 @@ public class SocketListener : MonoBehaviour
 			// Check for end-of-file tag. If it is not there, read 
 			// more data.
 			content = state.sb.ToString();
+			
 			if (content.IndexOf("<EOF>") > -1) {
 				// All the data has been read from the 
 				// client. Display it on the console.
-				Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
-				                  content.Length, content );
-				Console.WriteLine("\n\n");
-				Debug.Log("Read " + content.Length + " bytes from socket. \n Data : " + content );
+//				Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
+//				                  content.Length, content );
+//				Console.WriteLine("\n\n");
+//				Debug.Log("Read " + content.Length + " bytes from socket. \n Data : " + content );
 				// Echo the data back to the client.
 				//Send(handler, content);
 				
@@ -259,7 +316,8 @@ public class SocketListener : MonoBehaviour
 		}
 	}
 	
-	public static void Send(Socket handler, String data) {
+	public static void Send(Socket handler, String data)
+	{
 		// Convert the string data to byte data using ASCII encoding.
 		byte[] byteData = Encoding.ASCII.GetBytes(data);
 		
@@ -268,6 +326,8 @@ public class SocketListener : MonoBehaviour
 		handler.BeginSend(byteData, 0, byteData.Length, 0,
 		                  new AsyncCallback(SendCallback), handler);
 	}
+	
+	
 	
 	private static void SendCallback(IAsyncResult ar) {
 		try {
@@ -283,42 +343,7 @@ public class SocketListener : MonoBehaviour
 			Console.WriteLine(e.ToString());
 		}
 	}
-	
-	//Handle all client messages here
-	public void MessageHandler(Socket client, string message)
-	{
-		Debug.Log("MessageHandler: " + message);
-		string[] token = message.Split(new Char[]{' '});
-		//parse strings here. Example:
-		if(token[0] == "Login")
-		{
-			bool loginOk = DataBaseLogin(token[1], token[2]);
-			if(loginOk)
-			{
-				ServerAction.logedClient = client;
-				
-				//serverState = ServerState.PlayingMainGame;
-			}
-		}
-		else if(token[0] == "Register")
-		{
-			DataBaseRegister(token[1], token[2]);
-		}
-		else if(token[0] == "PlayerPos")
-		{
-			Debug.Log("Handling position");
-			PlayerAction action = new PlayerAction();
-			action.client = client;
-			action.actionStr = "PlayerPos " + token[1] + " " + token[2];
-			ServerLevelManager.actionQueue.Enqueue(action);
-	
-		}
-		else if(token[0] == "This")
-		{
-			Send(client, message);
-		}
-		
-	}
+
 	
 	private bool DataBaseLogin(string name, string password)
 	{
@@ -495,6 +520,7 @@ public class SocketListener : MonoBehaviour
 		
 		return hashString.PadLeft(32, '0');
 	}
+
 	
 }
 
