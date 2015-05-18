@@ -313,8 +313,12 @@ public static string guiDebugStr = "";
 					state.receiveDone.Set();
 					state.response = message[0];
 					
+					foreach(string token in message)
+					{
+						instance.MessageHandler(token);
+						
+					}
 					
-					instance.MessageHandler(message[0]);
 					
 				//	state.workSocket.Shutdown(SocketShutdown.Both);
 				//	state.workSocket.Close();

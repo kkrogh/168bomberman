@@ -63,7 +63,6 @@
      <Compile Include="Assets\Scripts\ServerScripts\ServerCharacter.cs" />
      <Compile Include="Assets\Scripts\SocketListener.cs" />
      <Compile Include="Assets\Scripts\StateObject.cs" />
-     <None Include="Assets\Sound\se_j1\SE_JH_PATCH.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

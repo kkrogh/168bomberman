@@ -56,6 +56,8 @@ public static string guiDebugStr = "";
 	// Listen to any IP Address
 	IPEndPoint any;
 	
+	private static string[] stringSeparators = new string[] { "<EOF>" };
+	
 	void Awake()
 	{
 		conn = "URI=file:" + Application.dataPath + "/BombermanDB.s3db";
@@ -286,8 +288,8 @@ public static string guiDebugStr = "";
 			// Check for end-of-file tag. If it is not there, read 
 			// more data.
 			content = state.sb.ToString();
-			
-			if (content.IndexOf("<EOF>") > -1) {
+			String[] message = content.Split(stringSeparators, StringSplitOptions.None);
+			if (message.Length > 1) {
 				// All the data has been read from the 
 				// client. Display it on the console.
 //				Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
@@ -298,7 +300,12 @@ public static string guiDebugStr = "";
 				//Send(handler, content);
 				
 				//
-				SocketListener.instance.MessageHandler(handler, content);
+				
+				foreach(string token in message)
+				{
+					SocketListener.instance.MessageHandler(handler, token);
+				
+				}
 				//
 				
 				// Setup a new state object

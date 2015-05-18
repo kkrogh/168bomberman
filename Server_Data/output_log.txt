@@ -20,7 +20,7 @@ Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\
 Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.DataSetExtensions.dll into Unity Child Domain
 Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.dll (this message is harmless)
 Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.dll into Unity Child Domain
-- Completed reload, in  0.243 seconds
+- Completed reload, in  0.232 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -29,8 +29,21 @@ Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\
 Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Configuration.dll (this message is harmless)
 Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Xml.dll (this message is harmless)
+SocketException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+  at System.Net.Sockets.Socket.Bind (System.Net.EndPoint local_end) [0x00000] in <filename unknown>:0 
+  at SocketListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
 Waiting for a connection..
 Waiting for a connection..
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+InvalidOperationException: Operation is not valid due to the current state of the object
+  at System.Net.Sockets.Socket.BeginAccept (System.AsyncCallback callback, System.Object state) [0x00000] in <filename unknown>:0 
+  at SocketListener.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
