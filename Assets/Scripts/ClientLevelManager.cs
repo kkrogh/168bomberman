@@ -12,7 +12,7 @@ public class ClientLevelManager : MonoBehaviour
 {
 	public static ClientLevelManager instance = null;
 	
-	public GameState gameState = GameState.WaitingForPlayers;
+	public GameState gameState = GameState.Loading;
 	public GameObject[] bManPrefabs;
 	
 	public GameObject player;
@@ -39,6 +39,8 @@ public class ClientLevelManager : MonoBehaviour
 		bManPrefabs = new GameObject[4];
 		bManPrefabs[0] = Resources.Load("ClientMan") as GameObject;
 		bManPrefabs[1] = Resources.Load("ClientMan") as GameObject;
+		bManPrefabs[2] = Resources.Load("ClientMan") as GameObject;
+		bManPrefabs[3] = Resources.Load("ClientMan") as GameObject;
 		
 		player = GameObject.Find("Bomberman");
 		playerNum = 0;
@@ -56,19 +58,19 @@ public class ClientLevelManager : MonoBehaviour
 	void Update () 
 	{
 		
-		if(timer > 0.05)
-		{
-		
-//			string content =  "PlayerPos " + ClientLevelManager.instance.playerNum + " " + player.transform.position.x.ToString () 
-//				+ " " + player.transform.position.y.ToString () + " <EOF>";
-//			StateObject send_so = new StateObject ();
-//			send_so.workSocket = AsynchronousClient.client;
-//			AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
-			
-			timer = 0;
-		}
-		
-		timer = timer + Time.deltaTime;
+//		if(timer > 0.05)
+//		{
+//		
+////			string content =  "PlayerPos " + ClientLevelManager.instance.playerNum + " " + player.transform.position.x.ToString () 
+////				+ " " + player.transform.position.y.ToString () + " <EOF>";
+////			StateObject send_so = new StateObject ();
+////			send_so.workSocket = AsynchronousClient.client;
+////			AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
+//			
+//			timer = 0;
+//		}
+//		
+//		timer = timer + Time.deltaTime;
 	}
 	
 	
@@ -91,17 +93,25 @@ public class ClientLevelManager : MonoBehaviour
 		if(playerNum == 1)
 		{
 			player.transform.position = new Vector2(1,9);
-			Debug.Log("pos 1 9");
 		}
 		else if(playerNum == 2)
 		{
 			player.transform.position = new Vector2(1,1);
-			Debug.Log("pos 1 1");
 		}
+		else if(playerNum == 3)
+		{
+			player.transform.position = new Vector2(11,9);
+		}
+		else if(playerNum == 4)
+		{
+			player.transform.position = new Vector2(11,1);
+		}
+	
 	}
 	
 	public void AddEnemy(int enemyNum)
 	{
+		Debug.Log("Adding Enemy " + enemyNum);
 		int index = enemyNum - 1;
 		playerArray[index] = Instantiate(bManPrefabs[enemyNum-1]) as GameObject;
 		
@@ -112,6 +122,14 @@ public class ClientLevelManager : MonoBehaviour
 		else if(enemyNum == 2)
 		{
 			playerArray[index].transform.position = new Vector2(1,1);
+		}
+		else if(enemyNum == 3)
+		{
+			playerArray[index].transform.position = new Vector2(11,9);
+		}
+		else if(enemyNum == 4)
+		{
+			playerArray[index].transform.position = new Vector2(11,1);
 		}
 	}
 	

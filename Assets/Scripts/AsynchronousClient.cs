@@ -5,6 +5,7 @@ using System.Threading;
 using System.Text;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 // State object for receiving data from remote device.
 //public class StateObject {
@@ -51,7 +52,7 @@ public class ClientAction
 	public static bool received = true;
 	public static bool loadLevel = false;
 	public static int playerNum = 0;
-	public static int logedEnemyNum = 0;
+	public static Queue<int> enemyNumQueue = new Queue<int>();
 	public static PlayerInfo playerInfo = new PlayerInfo();
 	public static BombInfo bombInfo = new BombInfo();
 }
@@ -69,6 +70,7 @@ public static string guiDebugStr = "";
 	
 	private static string[] stringSeparators = new string[] { "<EOF>" };
 	private static bool received = true;
+
 	
 	void Awake()
 	{
@@ -85,6 +87,7 @@ public static string guiDebugStr = "";
 	void Start()
 	{
 	//	StartClient();
+	
 	}
 	
 	void Update()
@@ -97,14 +100,18 @@ public static string guiDebugStr = "";
 		
 		if(ClientAction.playerNum > 0)
 		{
+			Debug.Log("Loading Player " + ClientAction.playerNum);
 			ClientLevelManager.instance.LoadPlayer(ClientAction.playerNum);
 			ClientAction.playerNum = 0;
 		}
 		
-		if(ClientAction.logedEnemyNum > 0)
+		while(ClientAction.enemyNumQueue.Count > 0)
 		{
-			ClientLevelManager.instance.AddEnemy(ClientAction.logedEnemyNum);
-			ClientAction.logedEnemyNum = 0;
+			int enemyNum = ClientAction.enemyNumQueue.Dequeue();
+			if(enemyNum > 0)
+			{
+				ClientLevelManager.instance.AddEnemy(enemyNum);
+			}
 		}
 		
 		if(ClientAction.playerInfo.updated)
@@ -150,7 +157,7 @@ public static string guiDebugStr = "";
 		}
 		if(token[0] == "NewPlayer")
 		{
-			ClientAction.logedEnemyNum = int.Parse(token[1]);
+			ClientAction.enemyNumQueue.Enqueue(int.Parse(token[1]));
 		}
 		if(token[0] == "EnemyPos")
 		{
@@ -170,7 +177,7 @@ public static string guiDebugStr = "";
 		}
 		catch(Exception e)
 		{
-			guiDebugStr = e.ToString();
+			guiDebugStr = message;
 		}
 	}
 //	void OnGUI()
@@ -313,9 +320,9 @@ public static string guiDebugStr = "";
 					state.receiveDone.Set();
 					state.response = message[0];
 					
-					foreach(string token in message)
+					for(int i = 0; i < message.Length - 1; i++)
 					{
-						instance.MessageHandler(token);
+						instance.MessageHandler(message[i]);
 						
 					}
 					

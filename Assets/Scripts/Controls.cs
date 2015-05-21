@@ -15,6 +15,9 @@ public class Controls : MonoBehaviour {
 
 	private Character bomberman;
 	private Rigidbody2D rigidBody;
+	
+	private float timer;
+	private bool moved = false;
 	// Use this for initialization
 	void Start () {
 		//bomb = Resources.Load ("asset/Bomb");
@@ -49,7 +52,6 @@ public class Controls : MonoBehaviour {
 				animator.SetTrigger ("Left");
 			}
 		
-			bool moved = false;
 			if (Input.GetKey (KeyCode.UpArrow)) {
 				//transform.Translate(new Vector2(0,runSpeed*Time.deltaTime));
 				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (0, 1) * runSpeed * Time.deltaTime);
@@ -74,27 +76,27 @@ public class Controls : MonoBehaviour {
 
 
 
-			if (Input.GetKey (KeyCode.UpArrow)) {
-				//transform.Translate(new Vector2(0,runSpeed*Time.deltaTime));
-				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (0, 1) * runSpeed * Time.deltaTime);
-
-
-			}
-			if (Input.GetKey (KeyCode.DownArrow)) {
-				//transform.Translate(new Vector2(0,-runSpeed*Time.deltaTime));
-				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (0, -1) * runSpeed * Time.deltaTime);
-				animator.SetInteger ("Direction", 3);
-			}
-			if (Input.GetKey (KeyCode.LeftArrow)) {
-				//transform.Translate(new Vector2(-runSpeed*Time.deltaTime,0));
-				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (-1, 0) * runSpeed * Time.deltaTime);
-				animator.SetInteger ("Direction", 4);
-			}
-			if (Input.GetKey (KeyCode.RightArrow)) {
-				//transform.Translate(new Vector2(runSpeed*Time.deltaTime,0));
-				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (1, 0) * runSpeed * Time.deltaTime);
-
-			}
+//			if (Input.GetKey (KeyCode.UpArrow)) {
+//				//transform.Translate(new Vector2(0,runSpeed*Time.deltaTime));
+//				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (0, 1) * runSpeed * Time.deltaTime);
+//
+//
+//			}
+//			if (Input.GetKey (KeyCode.DownArrow)) {
+//				//transform.Translate(new Vector2(0,-runSpeed*Time.deltaTime));
+//				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (0, -1) * runSpeed * Time.deltaTime);
+//				animator.SetInteger ("Direction", 3);
+//			}
+//			if (Input.GetKey (KeyCode.LeftArrow)) {
+//				//transform.Translate(new Vector2(-runSpeed*Time.deltaTime,0));
+//				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (-1, 0) * runSpeed * Time.deltaTime);
+//				animator.SetInteger ("Direction", 4);
+//			}
+//			if (Input.GetKey (KeyCode.RightArrow)) {
+//				//transform.Translate(new Vector2(runSpeed*Time.deltaTime,0));
+//				rigidBody.MovePosition ((Vector2)this.transform.position + new Vector2 (1, 0) * runSpeed * Time.deltaTime);
+//
+//			}
 
 			if (Input.GetKeyDown (KeyCode.Space)) 
 			{
@@ -130,14 +132,28 @@ public class Controls : MonoBehaviour {
 			}
 		
 		
-			if (moved) {
-				string content =  "PlayerPos " + ClientLevelManager.instance.playerNum + " " + this.transform.position.x.ToString () 
-								+ " " + this.transform.position.y.ToString () + " <EOF>";
-				StateObject send_so = new StateObject ();
-				send_so.workSocket = AsynchronousClient.client;
-				AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
+//			if (moved) {
+//				string content =  "PlayerPos " + ClientLevelManager.instance.playerNum + " " + this.transform.position.x.ToString () 
+//								+ " " + this.transform.position.y.ToString () + " <EOF>";
+//				StateObject send_so = new StateObject ();
+//				send_so.workSocket = AsynchronousClient.client;
+//				AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
+//			
+//			}
 			
+			if(timer > 0.02)
+			{
+				if (moved) {
+					string content =  "PlayerPos " + ClientLevelManager.instance.playerNum + " " + this.transform.position.x.ToString () 
+						+ " " + this.transform.position.y.ToString () + " <EOF>";
+					StateObject send_so = new StateObject ();
+					send_so.workSocket = AsynchronousClient.client;
+					AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
+					moved = false;
+				}
+				timer = 0;
 			}
+			timer = timer + Time.deltaTime;
 		}
 	}
 

@@ -144,8 +144,10 @@ public static string guiDebugStr = "";
 	//Handle all client messages here
 	public void MessageHandler(Socket client, string message)
 	{
-		guiDebugStr = message;
-		Debug.Log("ServerMessageHandler: " + message);
+		try
+		{
+		//guiDebugStr = message;
+		//Debug.Log("ServerMessageHandler: " + message);
 		string[] token = message.Split(new Char[]{' '});
 		//parse strings here. Example:
 		if(token[0] == "Login")
@@ -154,7 +156,7 @@ public static string guiDebugStr = "";
 			bool loginOk = true;
 			if(loginOk)
 			{
-				logedClients.Add(ServerAction.logedPlayer);
+				logedClients.Add(client);
 				Send(client, "LoadLevel <EOF>");
 				//serverState = ServerState.PlayingMainGame;
 			}
@@ -170,7 +172,7 @@ public static string guiDebugStr = "";
 		}
 		else if(token[0] == "PlayerPos")
 		{
-			Debug.Log("Handling position");
+		//	Debug.Log("Handling position");
 			PlayerAction action = new PlayerAction();
 			action.client = client;
 			action.playerNum = int.Parse(token[1]);
@@ -185,6 +187,11 @@ public static string guiDebugStr = "";
 			action.playerNum = int.Parse(token[1]);
 			action.actionStr = "BombDropped " + token[2] + " " + token[3];
 			ServerLevelManager.actionQueue.Enqueue(action);
+		}
+		}
+		catch(Exception e)
+		{
+			guiDebugStr = message;
 		}
 		
 	}
@@ -271,7 +278,7 @@ public static string guiDebugStr = "";
 	
 	public static void ReadCallback(IAsyncResult ar) {
 		String content = String.Empty;
-		Debug.Log("ReadCallback");
+		//Debug.Log("ReadCallback");
 		// Retrieve the state object and the handler socket
 		// from the asynchronous state object.
 		StateObject state = (StateObject) ar.AsyncState;
@@ -279,7 +286,7 @@ public static string guiDebugStr = "";
 		
 		// Read data from the client socket. 
 		int bytesRead = handler.EndReceive(ar);
-		Debug.Log("bytesRead at ReadCallBack" + bytesRead);
+		//Debug.Log("bytesRead at ReadCallBack" + bytesRead);
 		if (bytesRead > 0) {
 			// There  might be more data, so store the data received so far.
 			state.sb.Append(Encoding.ASCII.GetString(
@@ -301,11 +308,16 @@ public static string guiDebugStr = "";
 				
 				//
 				
-				foreach(string token in message)
+				for(int i = 0; i < message.Length - 1; i++)
 				{
-					SocketListener.instance.MessageHandler(handler, token);
-				
+					SocketListener.instance.MessageHandler(handler, message[i]);
 				}
+				
+//				foreach(string token in message)
+//				{
+//					SocketListener.instance.MessageHandler(handler, token);
+//				
+//				}
 				//
 				
 				// Setup a new state object
@@ -328,7 +340,7 @@ public static string guiDebugStr = "";
 		// Convert the string data to byte data using ASCII encoding.
 		byte[] byteData = Encoding.ASCII.GetBytes(data);
 		
-		Debug.Log("Sent: " + data);
+		//Debug.Log("Sent: " + data);
 		// Begin sending the data to the remote device.
 		handler.BeginSend(byteData, 0, byteData.Length, 0,
 		                  new AsyncCallback(SendCallback), handler);
@@ -344,7 +356,7 @@ public static string guiDebugStr = "";
 			// Complete sending the data to the remote device.
 			int bytesSent = handler.EndSend(ar);
 			Console.WriteLine("Sent {0} bytes to client.", bytesSent);
-			Debug.Log("Sent " + bytesSent + " bytes to client.");
+			//Debug.Log("Sent " + bytesSent + " bytes to client.");
 			
 		} catch (Exception e) {
 			Console.WriteLine(e.ToString());
@@ -526,6 +538,11 @@ public static string guiDebugStr = "";
 		}
 		
 		return hashString.PadLeft(32, '0');
+	}
+	
+	void OnDestroy()
+	{
+		listener.Disconnect(false);
 	}
 
 	

@@ -36,6 +36,8 @@ public class ServerLevelManager : MonoBehaviour
 		bManPrefabs = new GameObject[4];
 		bManPrefabs[0] = Resources.Load("ServerMan") as GameObject;
 		bManPrefabs[1] = Resources.Load("ServerMan2") as GameObject;
+		bManPrefabs[2] = Resources.Load("ServerMan2") as GameObject;
+		bManPrefabs[3] = Resources.Load("ServerMan2") as GameObject;
 		
 		//bManPrefab = Resources.Load("ServerMan") as GameObject;
 		playerList = new List<ServerPlayer>();
@@ -106,7 +108,7 @@ public class ServerLevelManager : MonoBehaviour
 	
 	public void AddPlayer(Socket client)
 	{	
-		if(playerList.Count < 4)
+		if(playerList.Count <= 4)
 		{
 			int playerNum = playerList.Count+1;
 			ServerPlayer player = new ServerPlayer();
@@ -118,7 +120,7 @@ public class ServerLevelManager : MonoBehaviour
 			
 			player.client = client;
 			playerList.Add(player);
-			
+			Debug.Log("PlayerNum " + playerNum);
 			string message = "PlayerNum " + playerNum + " <EOF>";
 			//Send player number to newest player
 			SocketListener.Send(client, message);
@@ -148,6 +150,14 @@ public class ServerLevelManager : MonoBehaviour
 		else if(playerNum == 2)
 		{
 			gameObj.transform.position = new Vector2(1,1);
+		}
+		else if(playerNum == 3)
+		{
+			gameObj.transform.position = new Vector2(11,9);
+		}
+		else if(playerNum == 4)
+		{
+			gameObj.transform.position = new Vector2(11,1);
 		}
 	}
 	
