@@ -1,0 +1,75 @@
+﻿using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.UI;
+
+public class LobbyScript : MonoBehaviour {
+
+	SocketListener serverInstance;
+	AsynchronousClient clientInstance;
+
+	public Text userstext;
+	public Text chattext;
+
+	public InputField inputfield;
+
+
+	private string userstextstring = "";
+	private string chattextstring = "";
+	
+		// Use this for initialization
+	void Start () {
+
+		serverInstance = SocketListener.instance;
+		clientInstance = AsynchronousClient.instance;
+			
+		userstextstring = "Mario\nLuigi\nPeach";
+		//userstext.text = userstextstring;
+		chattextstring = "Mario1: Hey Peach!\nLuigi: .....\n";
+
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+
+
+	}
+
+	void OnGUI(){
+
+		if(inputfield.isFocused && inputfield.text != "" && Input.GetKey(KeyCode.Return)) {
+			sendChat();
+			inputfield.text = "";
+		}
+
+		chattextstring = "";
+		string[] stringy = new string[5];
+		ClientAction.lobbyInfo.chatstrings.CopyTo (stringy, 0);
+
+		foreach (string s in stringy) {
+			chattextstring+= "\n"+s;
+
+		}
+
+		userstext.text = userstextstring;
+		chattext.text = chattextstring;
+
+	}
+
+
+	public void sendChat()
+	{
+		Debug.Log ("sending chat");
+		string content = "Chat " + inputfield.text + " <EOF>";
+		StateObject send_so = new StateObject ();
+		send_so.workSocket = AsynchronousClient.client;
+		AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
+		send_so.sendDone.WaitOne(5000);
+		Debug.Log("chat sent");
+
+		//chattextstring += inputfield.text;
+	}
+
+
+
+}

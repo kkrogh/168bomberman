@@ -47,24 +47,39 @@ public class BombInfo
 	public bool droppedBomb = false;
 }
 
+public class LobbyInfo
+{
+	public string userstextstring = "";
+	public string chattextstring = "";
+
+	public List<string> usersstrings = new List<string>();
+	public Queue<string> chatstrings = new Queue<string>();
+
+	//private static List<string> usersstrings = new List<string>();
+	//private static List<string> chatstrings = new List<string>();
+
+}
+
 public class ClientAction
 {
 	public static bool received = true;
 	public static bool loadLevel = false;
+	public static bool loadLobby = false;
 	public static int playerNum = 0;
 	public static Queue<int> enemyNumQueue = new Queue<int>();
 	public static PlayerInfo playerInfo = new PlayerInfo();
+	public static LobbyInfo lobbyInfo = new LobbyInfo();
 	public static BombInfo bombInfo = new BombInfo();
 }
 
 public class AsynchronousClient : MonoBehaviour{
 
-public static string guiDebugStr = "";
+	public static string guiDebugStr = "";
 	// The port number for the remote device.
 	public static AsynchronousClient instance;
 	public static Socket client;
 	
-	public string ipStr = "192.168.0.16";
+	public string ipStr = "127.0.0.1";
 	private const int port = 11000;
 	private string message;
 	
@@ -97,7 +112,13 @@ public static string guiDebugStr = "";
 			Application.LoadLevel("MainGame");
 			ClientAction.loadLevel = false;
 		}
-		
+		if(ClientAction.loadLobby)
+		{
+			//Debug.Log("loading level lobby");
+			Application.LoadLevel("LobbyScene");
+			ClientAction.loadLobby = false;
+		}
+
 		if(ClientAction.playerNum > 0)
 		{
 			Debug.Log("Loading Player " + ClientAction.playerNum);
@@ -150,6 +171,10 @@ public static string guiDebugStr = "";
 		{
 			ClientAction.loadLevel = true;
 		}
+		if(token[0] == "LoadLobby")
+		{
+			ClientAction.loadLobby = true;
+		}
 		if(token[0] == "PlayerNum")
 		{
 			ClientAction.playerNum = int.Parse(token[1]);
@@ -172,6 +197,14 @@ public static string guiDebugStr = "";
 			ClientAction.bombInfo.x = float.Parse(token[2]);
 			ClientAction.bombInfo.y = float.Parse(token[3]);
 			ClientAction.bombInfo.droppedBomb = true;
+		}
+		if(token[0] == "Chat")
+		{
+			Debug.Log("adding chat to list");
+			ClientAction.lobbyInfo.chatstrings.Enqueue("User:"+token[1]);
+		
+			if(ClientAction.lobbyInfo.chatstrings.Count > 5)
+			{ClientAction.lobbyInfo.chatstrings.Dequeue();}
 		}
 		
 		}

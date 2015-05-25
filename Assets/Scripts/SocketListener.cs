@@ -157,13 +157,21 @@ public static string guiDebugStr = "";
 			if(loginOk)
 			{
 				logedClients.Add(client);
-				Send(client, "LoadLevel <EOF>");
+				Send(client, "LoadLobby <EOF>");
 				//serverState = ServerState.PlayingMainGame;
 			}
 		}
 		else if(token[0] == "Loaded")
 		{
 			ServerAction.logedPlayer = client;
+			
+		}
+		else if(token[0] == "Chat")
+		{
+			Debug.Log ("received chat, sending chat");
+			string chatstring = "Chat " +token[1] +" <EOF>";
+			Send (client,chatstring);
+			Debug.Log ("after send");
 			
 		}
 		else if(token[0] == "Register")
@@ -340,7 +348,7 @@ public static string guiDebugStr = "";
 		// Convert the string data to byte data using ASCII encoding.
 		byte[] byteData = Encoding.ASCII.GetBytes(data);
 		
-		//Debug.Log("Sent: " + data);
+		Debug.Log("Sent: " + data);
 		// Begin sending the data to the remote device.
 		handler.BeginSend(byteData, 0, byteData.Length, 0,
 		                  new AsyncCallback(SendCallback), handler);
