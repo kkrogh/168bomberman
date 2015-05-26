@@ -87,6 +87,8 @@ public class AsynchronousClient : MonoBehaviour{
 	private static string[] stringSeparators = new string[] { "<EOF>" };
 	private static bool received = true;
 
+	public string playername;
+
 	
 	void Awake()
 	{
@@ -175,7 +177,7 @@ public class AsynchronousClient : MonoBehaviour{
 		{
 		//guiDebugStr = message;
 		Debug.Log("ClientMessageHandler : " + message);
-		string[] token = message.Split(new Char[]{' '});
+		string[] token = message.Split(new Char[]{'|'});
 		
 		if(token[0] == "LoadLevel")
 		{
@@ -211,7 +213,7 @@ public class AsynchronousClient : MonoBehaviour{
 		if(token[0] == "Chat")
 		{
 			Debug.Log("adding chat to list");
-			ClientAction.lobbyInfo.chatstrings.Enqueue("User:"+token[1]);
+			ClientAction.lobbyInfo.chatstrings.Enqueue(token[1]);
 		
 			if(ClientAction.lobbyInfo.chatstrings.Count > 5)
 			{ClientAction.lobbyInfo.chatstrings.Dequeue();}
