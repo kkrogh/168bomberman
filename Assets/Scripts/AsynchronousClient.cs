@@ -37,6 +37,8 @@ public class PlayerInfo
 	public float x;
 	public float y;
 	public bool disconnected = false;
+	public bool death = false;
+	public int score = 0;
 	public bool updated = false;
 }
 
@@ -144,6 +146,10 @@ public class AsynchronousClient : MonoBehaviour{
 			{
 				ClientLevelManager.instance.RemovePlayer(ClientAction.playerInfo.playerNum);
 			}
+			else if(ClientAction.playerInfo.death)
+			{
+				ClientLevelManager.instance.UpdateScore(ClientAction.playerInfo.playerNum, ClientAction.playerInfo.score);
+			}
 			else
 			{
 				ClientLevelManager.instance.SetPlayerPos(ClientAction.playerInfo.playerNum,
@@ -175,7 +181,7 @@ public class AsynchronousClient : MonoBehaviour{
 	{
 		try
 		{
-		//guiDebugStr = message;
+		guiDebugStr = message;
 		Debug.Log("ClientMessageHandler : " + message);
 		string[] token = message.Split(new Char[]{'|'});
 		
@@ -224,11 +230,18 @@ public class AsynchronousClient : MonoBehaviour{
 			ClientAction.playerInfo.disconnected = true;
 			ClientAction.playerInfo.updated = true;
 		}
+		if(token[0] == "Death")
+		{
+			ClientAction.playerInfo.death = true;
+			ClientAction.playerInfo.playerNum = int.Parse(token[1]);
+			ClientAction.playerInfo.score = int.Parse(token[2]);
+			ClientAction.playerInfo.updated = true;
+		}
 		
 		}
 		catch(Exception e)
 		{
-			guiDebugStr = message;
+			guiDebugStr = e.ToString();;
 		}
 	}
 //	void OnGUI()

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ServerCharacter : MonoBehaviour {
 
@@ -13,7 +14,8 @@ public class ServerCharacter : MonoBehaviour {
 	public int deathCount;
 	public bool dying;
 	public GameObject bomb;
-	public int kills;
+	public int deaths;
+	public int playerNum;
 	
 	void Awake()
 	{
@@ -21,7 +23,8 @@ public class ServerCharacter : MonoBehaviour {
 		bomb = Resources.Load("ServerBomb") as GameObject;
 		deathCount = 0;
 		dying = false;
-		kills = 0;
+		deaths = 5;
+		playerNum = 0;
 	}
 	
 	
@@ -55,6 +58,15 @@ public class ServerCharacter : MonoBehaviour {
 			deathCount=90;
 			//animator.SetTrigger ("Death");
 			dying=true;
+			
+			deaths--;
+			
+			foreach(ServerPlayer player in ServerLevelManager.instance.playerList)
+			{
+				SocketListener.Send(player.client, "Death|" + playerNum + "|"
+									+ deaths + "|<EOF>");
+			}
+			
 		}
 		if (col.tag == "Item_BombPower") {
 			this.bombPower++;

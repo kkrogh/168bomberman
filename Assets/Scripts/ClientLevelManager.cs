@@ -12,11 +12,15 @@ public class ClientLevelManager : MonoBehaviour
 {
 	public static ClientLevelManager instance = null;
 	
+	public TextMesh[] scoreBoard;
+	
 	public GameState gameState = GameState.Loading;
 	public GameObject[] bManPrefabs;
 	
 	public GameObject player;
 	public int playerNum;
+	
+	
 	
 	GameObject[] playerArray;
 	
@@ -24,6 +28,7 @@ public class ClientLevelManager : MonoBehaviour
 	
 	void Awake()
 	{
+		
 		if(instance != null && instance != this)
 		{
 			DestroyImmediate(gameObject);
@@ -36,6 +41,12 @@ public class ClientLevelManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		scoreBoard = new TextMesh[4];
+		scoreBoard[0] = GameObject.Find("Score1").GetComponent<TextMesh>();
+		scoreBoard[1] = GameObject.Find("Score2").GetComponent<TextMesh>();
+		scoreBoard[2] = GameObject.Find("Score3").GetComponent<TextMesh>();
+		scoreBoard[3] = GameObject.Find("Score4").GetComponent<TextMesh>();
+	
 		bManPrefabs = new GameObject[4];
 		bManPrefabs[0] = Resources.Load("ClientMan") as GameObject;
 		bManPrefabs[1] = Resources.Load("ClientMan") as GameObject;
@@ -164,5 +175,11 @@ public class ClientLevelManager : MonoBehaviour
 			Destroy(playerArray[index]);
 			playerArray[index] = null;
 		}
+	}
+	
+	public void UpdateScore(int playerNum, int score)
+	{
+		int index = playerNum - 1;
+		scoreBoard[index].text = "" + score;
 	}
 }

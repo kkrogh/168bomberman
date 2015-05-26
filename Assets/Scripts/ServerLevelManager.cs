@@ -25,6 +25,7 @@ public struct PlayerAction
 
 public class ServerLevelManager : MonoBehaviour 
 {
+	public static ServerLevelManager instance;
 	public static Queue<PlayerAction> actionQueue = new Queue<PlayerAction>();
 	
 	public GameObject[] bManPrefabs;
@@ -33,6 +34,14 @@ public class ServerLevelManager : MonoBehaviour
 	
 	void Awake()
 	{
+		if(instance != null && instance != this)
+		{
+			DestroyImmediate(gameObject);
+			return;
+		}
+		
+		instance = this;
+		
 		bManPrefabs = new GameObject[4];
 		bManPrefabs[0] = Resources.Load("ServerMan") as GameObject;
 		bManPrefabs[1] = Resources.Load("ServerMan2") as GameObject;
@@ -152,6 +161,7 @@ public class ServerLevelManager : MonoBehaviour
 			ServerPlayer player = new ServerPlayer();
 			player.bomberman = Instantiate(bManPrefabs[playerNum-1]) as GameObject;
 			player.playerNum = playerNum;
+			player.bomberman.GetComponent<ServerCharacter>().playerNum = playerNum;
 			
 			SetPlayerStartPosition(player.bomberman, playerNum);
 			
