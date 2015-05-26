@@ -118,7 +118,7 @@ public class Controls : MonoBehaviour {
 			
 				if (bomberman.liveBombs < bomberman.bombLimit && !bombPlaced) {
 				
-					string content = "BombDropped " + ClientLevelManager.instance.playerNum + " " + x.ToString() + " " + y.ToString() + " <EOF>";
+					string content = "BombDropped|" + ClientLevelManager.instance.playerNum + "|" + x.ToString() + "|" + y.ToString() + "|<EOF>";
 					StateObject send_so = new StateObject ();
 					send_so.workSocket = AsynchronousClient.client;
 					AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
@@ -144,8 +144,8 @@ public class Controls : MonoBehaviour {
 			if(timer > 0.02)
 			{
 				if (moved) {
-					string content =  "PlayerPos " + ClientLevelManager.instance.playerNum + " " + this.transform.position.x.ToString () 
-						+ " " + this.transform.position.y.ToString () + " <EOF>";
+					string content =  "PlayerPos|" + ClientLevelManager.instance.playerNum + "|" + this.transform.position.x.ToString () 
+						+ "|" + this.transform.position.y.ToString () + "|<EOF>";
 					StateObject send_so = new StateObject ();
 					send_so.workSocket = AsynchronousClient.client;
 					AsynchronousClient.Send (AsynchronousClient.client, content, send_so);

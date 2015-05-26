@@ -55,7 +55,7 @@ public class ServerLevelManager : MonoBehaviour
 		while(actionQueue.Count > 0)
 		{
 			PlayerAction action = actionQueue.Dequeue();
-			string[] token = action.actionStr.Split(new Char[]{' '});
+			string[] token = action.actionStr.Split(new Char[]{'|'});
 			Debug.Log ("Queue msg: " + token[0]);
 			
 			if(token[0] == "PlayerPos")
@@ -72,7 +72,7 @@ public class ServerLevelManager : MonoBehaviour
 					else if(action.client != null && playerList[i] != null)
 					{
 						int movedPlayerNum = action.playerNum;
-						string message = "EnemyPos " + movedPlayerNum + " " + token[1] + " " + token[2] + " <EOF>";
+						string message = "EnemyPos|" + movedPlayerNum + "|" + token[1] + "|" + token[2] + "|<EOF>";
 						SocketListener.Send(playerList[i].client, message);
 					}
 
@@ -97,7 +97,7 @@ public class ServerLevelManager : MonoBehaviour
 					if(playerList[i] != null && playerList[i].client != action.client)
 					{
 						int movedPlayerNum = action.playerNum;
-						string message = "BombDropped " + action.playerNum + " " + token[1] + " " + token[2] + " <EOF>";
+						string message = "BombDropped|" + action.playerNum + "|" + token[1] + "|" + token[2] + "|<EOF>";
 						SocketListener.Send(playerList[i].client, message);
 					}
 					
@@ -120,7 +120,7 @@ public class ServerLevelManager : MonoBehaviour
 					if(playerList[i] != null && playerList[i].client != action.client)
 					{
 						int movedPlayerNum = action.playerNum;
-						string message = "Disconnect " + action.playerNum + " <EOF>";
+						string message = "Disconnect|" + action.playerNum + "|<EOF>";
 						SocketListener.Send(playerList[i].client, message);
 					}
 					
@@ -159,7 +159,7 @@ public class ServerLevelManager : MonoBehaviour
 			player.client = client;
 			playerList.Add(player);
 			Debug.Log("PlayerNum " + playerNum);
-			string message = "PlayerNum " + playerNum + " <EOF>";
+			string message = "PlayerNum|" + playerNum + "|<EOF>";
 			//Send player number to newest player
 			SocketListener.Send(client, message);
 			
@@ -167,11 +167,11 @@ public class ServerLevelManager : MonoBehaviour
 			{	
 				if(playerList[i].client != client)
 				{
-					message = "NewPlayer " + playerNum + " <EOF>";
+					message = "NewPlayer|" + playerNum + "|<EOF>";
 					//send new player message to existing players
 					SocketListener.Send(playerList[i].client, message);
 					//send a message to the new player for each existing player
-					message = "NewPlayer " + playerList[i].playerNum + " <EOF>";
+					message = "NewPlayer|" + playerList[i].playerNum + "|<EOF>";
 					SocketListener.Send(client, message);
 				}
 			}

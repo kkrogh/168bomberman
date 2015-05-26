@@ -447,11 +447,11 @@ public class AsynchronousClient : MonoBehaviour{
 		
 		if(ClientLevelManager.instance != null)
 		{
-			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect " + ClientLevelManager.instance.playerNum + " <EOF>", send_so);
+			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect|" + ClientLevelManager.instance.playerNum + " <EOF>", send_so);
 		}
 		else
 		{
-			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect " + 0 + " <EOF>", send_so);
+			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect|" + 0 + " <EOF>", send_so);
 		}
 		send_so.sendDone.WaitOne(5000);
 

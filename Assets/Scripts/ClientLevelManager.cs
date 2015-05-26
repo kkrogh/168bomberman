@@ -49,7 +49,7 @@ public class ClientLevelManager : MonoBehaviour
 		
 		StateObject send_so = new StateObject();
 		send_so.workSocket = AsynchronousClient.client;
-		AsynchronousClient.Send(AsynchronousClient.client,"Loaded <EOF>", send_so);
+		AsynchronousClient.Send(AsynchronousClient.client,"Loaded|<EOF>", send_so);
 		send_so.sendDone.WaitOne(5000);
 		Debug.Log("sent loaded");
 	}

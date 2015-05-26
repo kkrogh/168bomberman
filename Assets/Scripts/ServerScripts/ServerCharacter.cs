@@ -13,6 +13,7 @@ public class ServerCharacter : MonoBehaviour {
 	public int deathCount;
 	public bool dying;
 	public GameObject bomb;
+	public int kills;
 	
 	void Awake()
 	{
@@ -20,6 +21,7 @@ public class ServerCharacter : MonoBehaviour {
 		bomb = Resources.Load("ServerBomb") as GameObject;
 		deathCount = 0;
 		dying = false;
+		kills = 0;
 	}
 	
 	
