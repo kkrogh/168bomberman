@@ -3,7 +3,6 @@ using System.Collections;
 
 public class DestructibleBlock : MonoBehaviour {
 
-	public GameObject BombPower;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,15 +12,7 @@ public class DestructibleBlock : MonoBehaviour {
 	{
 		if (col.tag == "Explosion") 
 		{
-			SpawnItem ();
 			Destroy (this.gameObject);
-		}
-	}
-
-	void SpawnItem()
-	{
-		if (Random.value > 0.5) {
-			Instantiate(BombPower, this.gameObject.transform.position, this.gameObject.transform.rotation);
 		}
 	}
 }
