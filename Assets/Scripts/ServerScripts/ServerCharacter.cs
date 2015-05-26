@@ -54,6 +54,10 @@ public class ServerCharacter : MonoBehaviour {
 			//animator.SetTrigger ("Death");
 			dying=true;
 		}
+		if (col.tag == "Item_BombPower") {
+			this.bombPower++;
+			Destroy(col.gameObject);
+		}
 	}
 	
 	public void DropBomb(float x, float y)
