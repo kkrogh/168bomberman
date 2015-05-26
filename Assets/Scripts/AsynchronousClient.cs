@@ -149,6 +149,7 @@ public class AsynchronousClient : MonoBehaviour{
 			else if(ClientAction.playerInfo.death)
 			{
 				ClientLevelManager.instance.UpdateScore(ClientAction.playerInfo.playerNum, ClientAction.playerInfo.score);
+				ClientAction.playerInfo.death = false;
 			}
 			else
 			{

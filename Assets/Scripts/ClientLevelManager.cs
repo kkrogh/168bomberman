@@ -12,7 +12,8 @@ public class ClientLevelManager : MonoBehaviour
 {
 	public static ClientLevelManager instance = null;
 	
-	public TextMesh[] scoreBoard;
+	public GameObject[] scoreBoard;
+	public GameObject[] scoreGuys;
 	
 	public GameState gameState = GameState.Loading;
 	public GameObject[] bManPrefabs;
@@ -41,11 +42,27 @@ public class ClientLevelManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		scoreBoard = new TextMesh[4];
-		scoreBoard[0] = GameObject.Find("Score1").GetComponent<TextMesh>();
-		scoreBoard[1] = GameObject.Find("Score2").GetComponent<TextMesh>();
-		scoreBoard[2] = GameObject.Find("Score3").GetComponent<TextMesh>();
-		scoreBoard[3] = GameObject.Find("Score4").GetComponent<TextMesh>();
+		scoreBoard = new GameObject[4];
+		scoreBoard[0] = GameObject.Find("Score1");
+		scoreBoard[1] = GameObject.Find("Score2");
+		scoreBoard[2] = GameObject.Find("Score3");
+		scoreBoard[3] = GameObject.Find("Score4");
+		
+		scoreBoard[0].SetActive(false);
+		scoreBoard[1].SetActive(false);
+		scoreBoard[2].SetActive(false);
+		scoreBoard[3].SetActive(false);
+		
+		scoreGuys = new GameObject[4];
+		scoreGuys[0] = GameObject.Find("Player1");
+		scoreGuys[1] = GameObject.Find("Player2");
+		scoreGuys[2] = GameObject.Find("Player3");
+		scoreGuys[3] = GameObject.Find("Player4");
+		
+		scoreGuys[0].SetActive(false);
+		scoreGuys[1].SetActive(false);
+		scoreGuys[2].SetActive(false);
+		scoreGuys[3].SetActive(false);
 	
 		bManPrefabs = new GameObject[4];
 		bManPrefabs[0] = Resources.Load("ClientMan") as GameObject;
@@ -97,8 +114,13 @@ public class ClientLevelManager : MonoBehaviour
 	
 	public void LoadPlayer(int playerNum)
 	{
+
 		this.playerNum = playerNum;
 		int index = playerNum - 1;
+		
+		scoreGuys[index].SetActive(true);
+		scoreBoard[index].SetActive(true);
+		
 		playerArray[index] = player;
 		
 		if(playerNum == 1)
@@ -124,6 +146,10 @@ public class ClientLevelManager : MonoBehaviour
 	{
 		Debug.Log("Adding Enemy " + enemyNum);
 		int index = enemyNum - 1;
+		
+		scoreGuys[index].SetActive(true);
+		scoreBoard[index].SetActive(true);
+		
 		playerArray[index] = Instantiate(bManPrefabs[enemyNum-1]) as GameObject;
 		
 		if(enemyNum == 1)
@@ -180,6 +206,6 @@ public class ClientLevelManager : MonoBehaviour
 	public void UpdateScore(int playerNum, int score)
 	{
 		int index = playerNum - 1;
-		scoreBoard[index].text = "" + score;
+		scoreBoard[index].GetComponent<TextMesh>().text = "" + score;
 	}
 }
