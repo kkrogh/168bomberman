@@ -148,7 +148,7 @@ public static string guiDebugStr = "";
 		{
 			//guiDebugStr = message;
 		//Debug.Log("ServerMessageHandler: " + message);
-		string[] token = message.Split(new Char[]{' '});
+		string[] token = message.Split(new Char[]{'|'});
 		//parse strings here. Example:
 		//guiDebugStr = token[0];
 		if(token[0] == "Login")
@@ -158,7 +158,7 @@ public static string guiDebugStr = "";
 			if(loginOk)
 			{
 				logedClients.Add(client);
-				Send(client, "LoadLobby <EOF>");
+				Send(client, "LoadLobby|<EOF>");
 				//serverState = ServerState.PlayingMainGame;
 			}
 		}
@@ -166,7 +166,7 @@ public static string guiDebugStr = "";
 		{
 			if(logedClients.Contains(client))
 			{
-				Send(client, "LoadLevel <EOF>");
+				Send(client, "LoadLevel|<EOF>");
 			}
 		}
 		else if(token[0] == "Loaded")
@@ -177,7 +177,7 @@ public static string guiDebugStr = "";
 		else if(token[0] == "Chat")
 		{
 			Debug.Log ("received chat, sending chat");
-			string chatstring = "Chat " +token[1] +" <EOF>";
+			string chatstring = "Chat|" +token[1] +"|<EOF>";
 			Send (client,chatstring);
 			Debug.Log ("after send");
 			
@@ -192,7 +192,7 @@ public static string guiDebugStr = "";
 			PlayerAction action = new PlayerAction();
 			action.client = client;
 			action.playerNum = int.Parse(token[1]);
-			action.actionStr = "PlayerPos " + token[2] + " " + token[3];
+			action.actionStr = "PlayerPos|" + token[2] + "|" + token[3];
 			ServerLevelManager.actionQueue.Enqueue(action);
 			
 		}
@@ -201,7 +201,7 @@ public static string guiDebugStr = "";
 			PlayerAction action = new PlayerAction();
 			action.client = client;
 			action.playerNum = int.Parse(token[1]);
-			action.actionStr = "BombDropped " + token[2] + " " + token[3];
+			action.actionStr = "BombDropped|" + token[2] + "|" + token[3];
 			ServerLevelManager.actionQueue.Enqueue(action);
 		}
 		else if(token[0] == "Disconnect")

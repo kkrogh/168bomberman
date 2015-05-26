@@ -60,7 +60,7 @@ public class LobbyScript : MonoBehaviour {
 	public void sendChat()
 	{
 		Debug.Log ("sending chat");
-		string content = "Chat " + inputfield.text + " <EOF>";
+		string content = "Chat|" + clientInstance.playername +":" + inputfield.text + "|<EOF>";
 		StateObject send_so = new StateObject ();
 		send_so.workSocket = AsynchronousClient.client;
 		AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
@@ -74,7 +74,7 @@ public class LobbyScript : MonoBehaviour {
 	{
 		StateObject send_so = new StateObject();
 		send_so.workSocket = AsynchronousClient.client;
-		AsynchronousClient.Send(AsynchronousClient.client,"StartSession <EOF>", send_so);
+		AsynchronousClient.Send(AsynchronousClient.client,"StartSession|<EOF>", send_so);
 		send_so.sendDone.WaitOne(5000);
 	}
 

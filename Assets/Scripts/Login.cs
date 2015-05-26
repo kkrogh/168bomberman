@@ -46,7 +46,7 @@ public class Login : MonoBehaviour
 				if(GUI.Button (new Rect(225,365,110,25),"Login"))
 				{
 					string hashed = Md5Sum(password);
-					string content = "Login " + username + " " + hashed + " <EOF>";
+					string content = "Login|" + username + "|" + hashed + "|<EOF>";
 					Debug.Log( "Attempting login with username ="+username+"  password="+  hashed);
 					
 					StateObject send_so = new StateObject();
@@ -85,7 +85,7 @@ public class Login : MonoBehaviour
 				if(GUI.Button (new Rect(225,365,110,25),"Register"))
 				{
 					string hashed = Md5Sum(password);
-					string content = "Register " + username + " " + hashed + " <EOF>";
+					string content = "Register|" + username + "|" + hashed + "|<EOF>";
 					Debug.Log( "Attempting Register with username ="+username+"  password="+  hashed);
 					
 					StateObject send_so = new StateObject();
