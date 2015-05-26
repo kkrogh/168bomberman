@@ -20,7 +20,2377 @@ Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\
 Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.DataSetExtensions.dll into Unity Child Domain
 Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.dll (this message is harmless)
 Loading C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Data.dll into Unity Child Domain
-- Completed reload, in  0.692 seconds
+- Completed reload, in  0.279 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Configuration.dll (this message is harmless)
+Platform assembly: C:\Users\David\Documents\UnityProjects\Bomberman\Server_Data\Managed\System.Xml.dll (this message is harmless)
+Waiting for a connection..
+Waiting for a connection..
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+AcceptCallBack
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Waiting for a connection..
+Waiting for a connection..
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: LoadLobby <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 15 bytes to client.
+Sent: LoadLevel <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 15 bytes to client.
+PlayerNum 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: PlayerNum 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 17 bytes to client.
+AcceptCallBack
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Waiting for a connection..
+Waiting for a connection..
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: LoadLobby <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 15 bytes to client.
+Sent: LoadLevel <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 15 bytes to client.
+PlayerNum 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: PlayerNum 2 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 17 bytes to client.
+Sent: NewPlayer 2 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 17 bytes to client.Sent: NewPlayer 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent 17 bytes to client.
+Sent: EnemyPos 2 1.16 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 1.48 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 1.8 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 22 bytes to client.
+Sent: EnemyPos 2 2.12 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 2.44 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 2.76 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 3.015625 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 2 2.855001 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 2 2.535001 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 2 2.215001 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 2 1.895001 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 2 1.575001 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 2 1.255001 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 2 0.9848437 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 28 bytes to client.
+Sent: EnemyPos 2 0.9849591 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 28 bytes to client.
+Sent: EnemyPos 2 0.9849738 1.32 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 0.9914574 1.637093 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9914574 1.957093 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9914574 2.277093 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9914574 2.597094 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9914574 2.917094 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9914574 3.0155 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 0.9914574 3.01532 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9914574 3.015084 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.311457 3.015054 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.627151 3.00588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.947151 3.00588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 2.0155 3.00588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 1.855028 3.00588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.535028 3.00588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.215028 3.00588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 0.9843767 3.00588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9846011 3.00588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9847447 3.00588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9848955 2.84588 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9849331 2.525879 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9932659 2.209739 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9932659 1.889739 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9932659 1.569739 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9932659 1.24974 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9932659 0.9848437 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 0.9932659 0.9849 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 0.9932659 0.984936 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9932659 0.9849591 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 1.313266 0.9849738 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.629264 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.949264 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.269264 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.589264 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.909264 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.0155 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 3.01532 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.015205 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.015131 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.015084 0.9935783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.015054 1.313578 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006541 1.629628 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006541 1.949628 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006541 2.0155 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 3.006541 2.01532 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 3.006541 2.015205 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+action: BombDropped 3 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+DropBomb function
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: BombDropped 2 3 2 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 3.006541 1.855001 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006541 1.535001 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006541 1.215001 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006541 0.9843751 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.006541 0.9846001 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.006541 0.9847441 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.006541 0.9848362 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.006541 0.9848952 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.686541 0.984933 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 2.370511 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.050511 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.730511 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.410511 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.090511 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.984875 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.98492 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9849488 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 0.9849672 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 0.9849999 0.9934859 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 0.9849999 1.313486 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 1.629521 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 1.949521 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 2.269521 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 2.589521 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 2.909521 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 3.0155 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+action: BombDropped 1 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+DropBomb function
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: BombDropped 2 1 3 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 0.9935301 3.015006 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 2.695006 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 2.375005 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 2.055005 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 1.735005 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 1.415005 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 1.095006 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 0.984875 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935301 0.9849672 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 1.31353 0.984979 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.629572 0.9934998 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.949572 0.9934998 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.269572 0.9934998 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.589572 0.9934998 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.909573 0.9934998 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.0155 0.9934998 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 3.01532 0.9934998 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.015205 0.9934998 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.015131 0.9934998 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.015054 1.1535 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 3.015035 1.4735 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 3.006508 1.789537 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 2.109537 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.Sent: EnemyPos 2 3.006508 2.429537 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 2.749537 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 3.015625 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 3.0154 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+action: BombDropped 3 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+DropBomb function
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: BombDropped 2 3 3 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 3.006508 3.015011 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 2.695011 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 2.375011 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 2.055011 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 1.735011 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 1.415011 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 1.095011 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 0.984875 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006508 0.98492 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 3.006508 0.9849488 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.846508 0.9849999 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.526508 0.9849999 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.210472 0.9935282 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.890472 0.9935282 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.570472 0.9935282 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.250472 0.9935282 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9848437 0.9935282 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 0.9849 0.9935282 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 0.984936 0.9935282 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9849892 0.9935282 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 0.9849931 1.313528 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 1.62957 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9935115 1.94957 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9935115 2.26957 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9935115 2.58957 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9935115 2.90957 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9935115 3.229571 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 3.549571 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 3.869571 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 4.0155 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+action: BombDropped 1 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+DropBomb function
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: BombDropped 2 1 4 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 0.9935115 4.015022 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 3.695022 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 3.375021 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 3.055021 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 2.735021 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 2.415021 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 2.095021 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 1.775021 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 1.455021 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 1.135021 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9935115 0.9843763 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 0.9935115 0.9846008 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 1.313511 0.9847445 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.629549 0.9933213 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 2 1.949549 0.9933213 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.269549 0.9933213 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.589549 0.9933213 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.909549 0.9933213 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.0155 0.9933213 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 3.01532 0.9933213 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.015205 1.313321 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.Sent: EnemyPos 2 3.006579 1.629327 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 1.949327 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 2.269327 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 2.589327 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 2.909328 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 3.229328 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 2 3.006579 3.549328 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 3.869328 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 4.0155 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 3.006579 4.01532 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+action: BombDropped 3 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+DropBomb function
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: BombDropped 2 3 4 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 3.006579 4.015054 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 3.695054 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 3.375053 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 3.055053 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 2.735053 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 2.415053 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 2.095053 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 1.775053 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 1.455053 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006579 1.135053 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 2 3.006579 0.9843783 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.006579 0.9846021 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 3.006579 0.9847453 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.846579 0.9849999 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.526579 0.9849999 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 2.210555 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 2 1.890555 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.570555 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.250555 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9848437 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 0.9849 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 0.984936 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9849999 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 36 bytes to client.
+Sent: EnemyPos 2 1.305 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 1.625 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 1.945 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 2.265 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 2.585 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 2.905 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 3.0155 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 3.01532 0.9935504 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.015205 1.31355 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 3.006651 1.629594 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006651 1.949594 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006651 2.269594 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006651 2.589595 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.006651 2.909595 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 2 3.166651 2.909595 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.Sent 34 bytes to client.
+
+Sent: EnemyPos 2 3.399242 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.719243 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.719243 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 4.015625 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 4.0154 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 4.015256 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 4.015164 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 4.015105 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+action: BombDropped 4 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+DropBomb function
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: BombDropped 2 4 3 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 3.855004 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.535003 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.215003 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 2.895003 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 2.575003 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 2.255003 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.935003 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.615003 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.295003 2.990156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.135003 2.830156 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.03015 2.670542 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.006801 2.359747 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.006801 2.039747 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.006801 1.719747 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.006801 1.399747 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.006801 1.079747 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.006801 0.9845 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 1.006801 0.9849999 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 1.006801 1.305 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 1.006801 1.625 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 1.006801 1.945 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 1.006801 2.265 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 1.006801 2.585 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 1.006801 2.905 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 1.006801 3.225 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 1.006801 3.225 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 1.140078 3.172302 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.255952 3.075283 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.50859 3.022052 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.82859 3.019513 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 2.14859 3.017889 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 2.46859 3.016849 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 2.78859 3.016479 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 3.10859 3.016479 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 3.428591 3.016479 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 3.735925 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 4.055925 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 4.375925 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 4.695925 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 5.015924 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 5.015592 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+action: BombDropped 5 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+DropBomb function
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: BombDropped 2 5 3 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent: EnemyPos 2 5.015099 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 4.695099 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 4.3751 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 4.0551 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 3.7351 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 3.4151 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 31 bytes to client.
+Sent: EnemyPos 2 3.095099 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 2.775099 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 2.455099 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 2.135099 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.815099 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.495099 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.335099 2.99472 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.331886 2.954412 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331825 2.954576 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331786 2.954682 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331761 2.954749 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331745 2.954792 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331735 2.95482 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.331729 2.954838 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331724 2.954849 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331722 2.954856 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.33172 2.954861 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 1.331719 2.954864 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331718 2.954866 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331717 2.954869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331717 2.954869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.Sent: EnemyPos 2 1.331717 2.954869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.331717 2.954869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 1.011717 2.954869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9845 2.954869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent: EnemyPos 2 0.98468 2.954869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+Sent: EnemyPos 2 0.9847952 2.954869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9848689 2.954869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9849162 2.634868 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9849463 2.314868 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9849656 1.994868 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.984978 1.674868 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 2 0.9898229 1.356979 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+Sent: EnemyPos 2 0.9898229 1.036979 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 35 bytes to client.
+AcceptCallBack
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Waiting for a connection..
+Waiting for a connection..
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: LoadLobby <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 15 bytes to client.
+Sent: LoadLevel <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 15 bytes to client.
+PlayerNum 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: PlayerNum 3 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: NewPlayer 3 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: NewPlayer 1 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 17 bytes to client.Sent 17 bytes to client.
+
+Sent: NewPlayer 3 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 17 bytes to client.
+Sent: NewPlayer 2 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 17 bytes to client.
+Sent 17 bytes to client.
+Sent: EnemyPos 3 11 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 21 bytes to client.
+Sent: EnemyPos 3 10.68 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 21 bytes to client.
+Sent 24 bytes to client.
+Sent: EnemyPos 3 10.68 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 24 bytes to client.Sent: EnemyPos 3 10.36 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent: EnemyPos 3 10.36 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 24 bytes to client.
+Sent 24 bytes to client.
+Sent: EnemyPos 3 10.04 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.04 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 24 bytes to client.
+Sent 24 bytes to client.
+Sent: EnemyPos 3 9.720001 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.720001 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.400002 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.400002 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.080002 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.080002 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.080002 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.080002 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.Sent 27 bytes to client.Sent: EnemyPos 3 9.400002 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.400002 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent: EnemyPos 3 9.720001 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.720001 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 10.04 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 24 bytes to client.
+Sent: EnemyPos 3 10.04 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 24 bytes to client.
+Sent: EnemyPos 3 10.36 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.36 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 24 bytes to client.
+Sent 24 bytes to client.
+Sent: EnemyPos 3 10.68 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 24 bytes to client.
+Sent: EnemyPos 3 10.68 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 24 bytes to client.
+Sent: EnemyPos 3 11 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 21 bytes to client.Sent 21 bytes to client.
+
+Sent: EnemyPos 3 11.0155 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 26 bytes to client.
+Sent: EnemyPos 3 11.0155 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 26 bytes to client.
+Sent: EnemyPos 3 11.015 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.015 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.
+Sent 25 bytes to client.
+Sent: EnemyPos 3 10.695 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.695 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.Sent 25 bytes to client.
+
+Sent: EnemyPos 3 10.375 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.
+Sent: EnemyPos 3 10.375 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.055 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.
+Sent: EnemyPos 3 10.055 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.
+Sent 25 bytes to client.
+Sent: EnemyPos 3 9.735003 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.735003 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.Sent 27 bytes to client.
+
+Sent: EnemyPos 3 9.415004 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.415004 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.095004 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.095004 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 8.9845 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.
+Sent: EnemyPos 3 8.9845 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 8.98468 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.Sent 26 bytes to client.
+
+Sent: EnemyPos 3 8.98468 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 26 bytes to client.
+Sent: EnemyPos 3 8.984796 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 8.984796 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.144995 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.144995 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.464994 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.464994 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.784994 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.784994 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 10.10499 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.10499 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 10.42499 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.Sent: EnemyPos 3 10.42499 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.74499 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.74499 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 11.01563 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.01563 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 11.0154 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.0154 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 26 bytes to client.
+Sent: EnemyPos 3 11.01526 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.Sent 26 bytes to client.Sent 27 bytes to client.
+Sent: EnemyPos 3 11.01526 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+
+Sent 27 bytes to client.
+
+Sent: EnemyPos 3 11.01511 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.01511 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 10.69511 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 10.69511 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 10.37511 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.37511 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 10.05511 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.Sent: EnemyPos 3 10.05511 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.735106 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.735106 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.Sent: EnemyPos 3 9.415107 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent: EnemyPos 3 9.415107 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.Sent 27 bytes to client.
+
+Sent: EnemyPos 3 9.095107 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.095107 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 8.9845 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 8.9845 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.
+Sent 25 bytes to client.
+action: BombDropped 9 9
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+DropBomb function
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: BombDropped 3 9 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: BombDropped 3 9 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 23 bytes to client.
+Sent 23 bytes to client.
+Sent: EnemyPos 3 8.984998 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.Sent: EnemyPos 3 8.984998 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.304997 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.304997 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.624997 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.624997 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 9.944997 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 9.944997 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent 27 bytes to client.
+Sent: EnemyPos 3 10.265 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.265 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 10.585 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.Sent 25 bytes to client.Sent 25 bytes to client.Sent: EnemyPos 3 10.585 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+
+
+Sent: EnemyPos 3 10.905 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.Sent: EnemyPos 3 10.905 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 25 bytes to client.
+
+Sent 25 bytes to client.
+Sent: EnemyPos 3 11.0155 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.0155 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 26 bytes to client.
+Sent 26 bytes to client.
+Sent: EnemyPos 3 11.01532 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.Sent: EnemyPos 3 11.01532 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 11.01502 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 11.01502 9 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 27 bytes to client.
+Sent: EnemyPos 3 11.01501 8.68 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 30 bytes to client.
+Sent: EnemyPos 3 11.01501 8.68 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.00853 8.362907 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 30 bytes to client.
+Sent: EnemyPos 3 11.00853 8.362907 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent 34 bytes to client.
+Sent: EnemyPos 3 11.00853 8.042908 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.00853 8.042908 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent 34 bytes to client.
+Sent: EnemyPos 3 11.00853 7.722908 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.00853 7.722908 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.00853 7.402908 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.00853 7.402908 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.Sent 34 bytes to client.Sent 34 bytes to client.
+Sent: EnemyPos 3 11.00853 7.082909 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+
+Sent: EnemyPos 3 11.00853 7.082909 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+
+Sent 34 bytes to client.
+Sent: EnemyPos 3 11.00853 6.9845 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.00853 6.9845 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 32 bytes to client.
+Sent 32 bytes to client.
+Sent: EnemyPos 3 11.00853 6.98468 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.00853 6.98468 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.Sent: EnemyPos 3 11.00853 6.984795 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 33 bytes to client.
+
+Sent 34 bytes to client.
+Sent: EnemyPos 3 11.00853 6.984795 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent: EnemyPos 3 11.00853 6.984869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent: EnemyPos 3 11.00853 6.984869 <EOF>
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Sent 34 bytes to client.
+Sent 34 bytes to client.
+SocketException: A request to send or receive data was disallowed because the socket is not connected and (when sending on a datagram socket using a sendto call) no address was supplied.
+
+  at System.Net.Sockets.Socket.Disconnect (Boolean reuseSocket) [0x00000] in <filename unknown>:0 
+  at SocketListener.OnDestroy () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+

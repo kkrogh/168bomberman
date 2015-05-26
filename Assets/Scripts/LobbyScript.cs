@@ -70,6 +70,13 @@ public class LobbyScript : MonoBehaviour {
 		//chattextstring += inputfield.text;
 	}
 
+	public void sendLoadGame()
+	{
+		StateObject send_so = new StateObject();
+		send_so.workSocket = AsynchronousClient.client;
+		AsynchronousClient.Send(AsynchronousClient.client,"StartSession <EOF>", send_so);
+		send_so.sendDone.WaitOne(5000);
+	}
 
 
 }

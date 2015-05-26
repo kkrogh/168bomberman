@@ -146,10 +146,11 @@ public static string guiDebugStr = "";
 	{
 		try
 		{
-		//guiDebugStr = message;
+			//guiDebugStr = message;
 		//Debug.Log("ServerMessageHandler: " + message);
 		string[] token = message.Split(new Char[]{' '});
 		//parse strings here. Example:
+		//guiDebugStr = token[0];
 		if(token[0] == "Login")
 		{
 			//bool loginOk = DataBaseLogin(token[1], token[2]);
@@ -159,6 +160,13 @@ public static string guiDebugStr = "";
 				logedClients.Add(client);
 				Send(client, "LoadLobby <EOF>");
 				//serverState = ServerState.PlayingMainGame;
+			}
+		}
+		else if(token[0] == "StartSession")
+		{
+			if(logedClients.Contains(client))
+			{
+				Send(client, "LoadLevel <EOF>");
 			}
 		}
 		else if(token[0] == "Loaded")
@@ -196,10 +204,24 @@ public static string guiDebugStr = "";
 			action.actionStr = "BombDropped " + token[2] + " " + token[3];
 			ServerLevelManager.actionQueue.Enqueue(action);
 		}
+		else if(token[0] == "Disconnect")
+		{
+			guiDebugStr = "Got to if";
+			//logedClients.Remove(client);
+			PlayerAction action = new PlayerAction();
+			action.client = client;
+			action.playerNum = int.Parse(token[1]);
+			action.actionStr = "Disconnect";
+			ServerLevelManager.actionQueue.Enqueue(action);
+		}
+		else
+		{
+			guiDebugStr = "string not handled";
+		}
 		}
 		catch(Exception e)
 		{
-			guiDebugStr = message;
+			guiDebugStr = e.ToString();
 		}
 		
 	}

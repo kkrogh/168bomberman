@@ -36,6 +36,7 @@ public class PlayerInfo
 	public int playerNum;
 	public float x;
 	public float y;
+	public bool disconnected = false;
 	public bool updated = false;
 }
 
@@ -137,9 +138,18 @@ public class AsynchronousClient : MonoBehaviour{
 		
 		if(ClientAction.playerInfo.updated)
 		{			
-			ClientLevelManager.instance.SetPlayerPos(ClientAction.playerInfo.playerNum,
-													 ClientAction.playerInfo.x,
-													 ClientAction.playerInfo.y);
+			if(ClientAction.playerInfo.disconnected)
+			{
+				ClientLevelManager.instance.RemovePlayer(ClientAction.playerInfo.playerNum);
+			}
+			else
+			{
+				ClientLevelManager.instance.SetPlayerPos(ClientAction.playerInfo.playerNum,
+				                                         ClientAction.playerInfo.x,
+				                                         ClientAction.playerInfo.y);
+			}
+		
+			
 													 
 			ClientAction.playerInfo.updated = false;
 		}
@@ -205,6 +215,12 @@ public class AsynchronousClient : MonoBehaviour{
 		
 			if(ClientAction.lobbyInfo.chatstrings.Count > 5)
 			{ClientAction.lobbyInfo.chatstrings.Dequeue();}
+		}
+		if(token[0] == "Disconnect")
+		{
+			ClientAction.playerInfo.playerNum = int.Parse(token[1]);
+			ClientAction.playerInfo.disconnected = true;
+			ClientAction.playerInfo.updated = true;
 		}
 		
 		}
@@ -420,6 +436,25 @@ public class AsynchronousClient : MonoBehaviour{
 	public bool isConnected()
 	{
 		return client.Connected;
+	}
+	
+	void OnDestroy()
+	{
+		StateObject send_so = new StateObject();
+		send_so.workSocket = AsynchronousClient.client;
+		
+		if(ClientLevelManager.instance != null)
+		{
+			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect " + ClientLevelManager.instance.playerNum + " <EOF>", send_so);
+		}
+		else
+		{
+			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect " + 0 + " <EOF>", send_so);
+		}
+		send_so.sendDone.WaitOne(5000);
+
+		
+		//client.Disconnect(false);
 	}
 
 }

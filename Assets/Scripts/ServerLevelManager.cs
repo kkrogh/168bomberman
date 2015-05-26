@@ -56,19 +56,20 @@ public class ServerLevelManager : MonoBehaviour
 		{
 			PlayerAction action = actionQueue.Dequeue();
 			string[] token = action.actionStr.Split(new Char[]{' '});
+			Debug.Log ("Queue msg: " + token[0]);
 			
 			if(token[0] == "PlayerPos")
 			{	
 				for(int i = 0; i < playerList.Count; i++)
 				{
-					if(playerList[i].client == action.client)
+					if(playerList[i] != null && playerList[i].client == action.client)
 					{
 						float x = float.Parse(token[1]);
 						float y = float.Parse(token[2]);
 						playerList[i].bomberman.transform.position = new Vector2(x,y);
 						
 					}
-					else
+					else if(action.client != null && playerList[i] != null)
 					{
 						int movedPlayerNum = action.playerNum;
 						string message = "EnemyPos " + movedPlayerNum + " " + token[1] + " " + token[2] + " <EOF>";
@@ -84,6 +85,7 @@ public class ServerLevelManager : MonoBehaviour
 				float y = float.Parse(token[2]);
 				
 				int index = action.playerNum - 1;
+				
 				ServerCharacter serverChar = playerList[index].bomberman.GetComponent<ServerCharacter>();
 				
 				
@@ -92,7 +94,7 @@ public class ServerLevelManager : MonoBehaviour
 				for(int i = 0; i < playerList.Count; i++)
 				{
 					
-					if(playerList[i].client != action.client)
+					if(playerList[i] != null && playerList[i].client != action.client)
 					{
 						int movedPlayerNum = action.playerNum;
 						string message = "BombDropped " + action.playerNum + " " + token[1] + " " + token[2] + " <EOF>";
@@ -100,6 +102,42 @@ public class ServerLevelManager : MonoBehaviour
 					}
 					
 				}
+			}
+			else if(token[0] == "Disconnect")
+			{
+				Debug.Log("LevelManager: Disconnect");
+				int index = action.playerNum - 1;
+				
+				if(index > -1 && playerList[index] != null)
+				{
+					Destroy(playerList[index].bomberman);
+					playerList[index] = null;
+				}
+				
+				for(int i = 0; i < playerList.Count; i++)
+				{
+					
+					if(playerList[i] != null && playerList[i].client != action.client)
+					{
+						int movedPlayerNum = action.playerNum;
+						string message = "Disconnect " + action.playerNum + " <EOF>";
+						SocketListener.Send(playerList[i].client, message);
+					}
+					
+				}
+				
+				
+//				for(int i = 0; i < playerList.Count; i++)
+//				{
+//					
+//					if(playerList[i].client != action.client && action.client != null)
+//					{
+//						int movedPlayerNum = action.playerNum;
+//						string message = "BombDropped " + action.playerNum + " " + token[1] + " " + token[2] + " <EOF>";
+//						SocketListener.Send(playerList[i].client, message);
+//					}
+//					
+//				}
 			}
 			
 		}

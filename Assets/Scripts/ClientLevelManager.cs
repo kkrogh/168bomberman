@@ -153,7 +153,16 @@ public class ClientLevelManager : MonoBehaviour
 			clientChar.DropBomb(x,y);
 		}
 		
+	}
+	
+	public void RemovePlayer(int playerNum)
+	{
+		int index = playerNum - 1;
 		
-		
+		if(index > -1 && index < 4 && playerArray[index] != null)
+		{
+			Destroy(playerArray[index]);
+			playerArray[index] = null;
+		}
 	}
 }
