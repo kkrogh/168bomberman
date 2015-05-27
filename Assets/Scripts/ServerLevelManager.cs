@@ -124,7 +124,7 @@ public class ServerLevelManager : MonoBehaviour
 			}
 			else if(token[0] == "Disconnect")
 			{
-				Debug.Log("LevelManager: Disconnect");
+				Debug.Log("LevelManager: Disconnect : " + action.session);
 				int index = action.playerNum - 1;
 				
 				if(index > -1 && sessionMap[action.session][index] != null)

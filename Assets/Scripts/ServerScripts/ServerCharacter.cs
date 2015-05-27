@@ -74,10 +74,14 @@ public class ServerCharacter : MonoBehaviour {
 			
 			SocketListener.instance.DataBaseAddDeathScore(playername, 1);
 			
-			foreach(ServerPlayer player in ServerLevelManager.instance.playerList)
+			foreach(ServerPlayer player in ServerLevelManager.instance.sessionMap[session])
 			{
-				SocketListener.Send(player.client,  "Death|" + playerNum + "|"
-									+ deaths + "|<EOF>");
+				if(player != null && player.client != null)
+				{
+					SocketListener.Send(player.client,  "Death|" + playerNum + "|"
+					                    + deaths + "|<EOF>");
+				}
+				
 			}
 			
 		}

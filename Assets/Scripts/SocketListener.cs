@@ -268,9 +268,15 @@ public static string guiDebugStr = "";
 			//logedClients.Remove(client);
 			PlayerAction action = new PlayerAction();
 			action.client = client;
-			action.playerNum = int.Parse(token[1]);
-			action.actionStr = "Disconnect";
-			ServerLevelManager.actionQueue.Enqueue(action);
+			action.session = int.Parse(token[1]);
+			
+			if(action.session != 0)
+			{
+					action.playerNum = int.Parse(token[2]);
+					action.actionStr = "Disconnect";
+					ServerLevelManager.actionQueue.Enqueue(action);
+			}
+			
 		}
 		else
 		{
@@ -279,7 +285,7 @@ public static string guiDebugStr = "";
 		}
 		catch(Exception e)
 		{
-			guiDebugStr = e.ToString();
+			guiDebugStr = message; //e.ToString();
 		}
 		
 	}

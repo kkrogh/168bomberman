@@ -146,6 +146,7 @@ public class AsynchronousClient : MonoBehaviour{
 			if(ClientAction.playerInfo.disconnected)
 			{
 				ClientLevelManager.instance.RemovePlayer(ClientAction.playerInfo.playerNum);
+				ClientAction.playerInfo.disconnected = false;
 			}
 			else if(ClientAction.playerInfo.death)
 			{
@@ -176,7 +177,7 @@ public class AsynchronousClient : MonoBehaviour{
 	
 	void OnGUI()
 	{
-		GUI.Label(new Rect(50, 50, 200, 50),  "ThreadExeption: " + guiDebugStr);
+		GUI.Label(new Rect(50, 50, 200, 100),  "ThreadExeption: " + guiDebugStr);
 	}
 	
 	public void MessageHandler(string message)
@@ -472,11 +473,12 @@ public class AsynchronousClient : MonoBehaviour{
 		
 		if(ClientLevelManager.instance != null)
 		{
-			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect|" + ClientLevelManager.instance.playerNum + " <EOF>", send_so);
+			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect|" + AsynchronousClient.instance.session + "|"
+								 +  ClientLevelManager.instance.playerNum + "|<EOF>", send_so);
 		}
 		else
 		{
-			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect|" + 0 + " <EOF>", send_so);
+			AsynchronousClient.Send(AsynchronousClient.client,"Disconnect|" + 0 + "|" +0 + "|<EOF>", send_so);
 		}
 		send_so.sendDone.WaitOne(5000);
 
