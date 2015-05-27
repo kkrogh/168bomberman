@@ -244,6 +244,10 @@ public class AsynchronousClient : MonoBehaviour{
 			ClientAction.playerInfo.score = int.Parse(token[2]);
 			ClientAction.playerInfo.updated = true;
 		}
+		if(token[0] == "PlayerLoggedIn")
+		{
+			ClientAction.lobbyInfo.usersstrings.Add(token[1]);
+		}
 		
 		}
 		catch(Exception e)
