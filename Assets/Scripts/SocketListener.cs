@@ -166,16 +166,26 @@ public static string guiDebugStr = "";
 				ClientInfo clientInfo = new ClientInfo();
 				clientInfo.client = client;
 				clientInfo.username = token[1];
+				
+				
 				logedClients.Add(clientInfo);
 				
 				string userStr = "";
 				
 				foreach(ClientInfo obj in logedClients)
 				{
+					
 					userStr = userStr + obj.username + "|";
+					
+					if(obj != null && obj.client != client)
+					{
+						Send(obj.client, "PlayerLoggedIn|" + clientInfo.username + "|<EOF>");
+					}
 				}
 				
 				Send(client, "LoadLobby|" + userStr + "<EOF>");
+				
+				
 				//serverState = ServerState.PlayingMainGame;
 			}
 		}
