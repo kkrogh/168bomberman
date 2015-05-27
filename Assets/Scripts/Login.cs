@@ -60,6 +60,7 @@ public class Login : MonoBehaviour
 					AsynchronousClient.Receive(recv_so);
 					recv_so.receiveDone.WaitOne(3000);
 					
+					clientInstance.playername = username;
 					username = "";
 					password = "";
 					
