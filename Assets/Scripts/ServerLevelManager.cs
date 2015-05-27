@@ -65,7 +65,7 @@ public class ServerLevelManager : MonoBehaviour
 		{
 			PlayerAction action = actionQueue.Dequeue();
 			string[] token = action.actionStr.Split(new Char[]{'|'});
-			Debug.Log ("Queue msg: " + token[0]);
+			//Debug.Log ("Queue msg: " + token[0]);
 			
 			if(token[0] == "PlayerPos")
 			{	
@@ -167,6 +167,15 @@ public class ServerLevelManager : MonoBehaviour
 			
 			
 			player.client = client;
+			
+			foreach(ClientInfo clientInfo in SocketListener.logedClients)
+			{
+				if(clientInfo.client == client)
+				{
+					player.bomberman.GetComponent<ServerCharacter>().playername = clientInfo.username;
+				}
+			}
+			
 			playerList.Add(player);
 			Debug.Log("PlayerNum " + playerNum);
 			string message = "PlayerNum|" + playerNum + "|<EOF>";

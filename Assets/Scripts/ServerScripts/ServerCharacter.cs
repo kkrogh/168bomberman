@@ -16,6 +16,7 @@ public class ServerCharacter : MonoBehaviour {
 	public GameObject bomb;
 	public int deaths;
 	public int playerNum;
+	public string playername;
 	
 	void Awake()
 	{
@@ -61,6 +62,7 @@ public class ServerCharacter : MonoBehaviour {
 			
 			deaths--;
 			
+			SocketListener.instance.DataBaseAddDeathScore(playername, 1);
 			foreach(ServerPlayer player in ServerLevelManager.instance.playerList)
 			{
 				SocketListener.Send(player.client, "Death|" + playerNum + "|"

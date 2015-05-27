@@ -200,6 +200,9 @@ public class ClientLevelManager : MonoBehaviour
 		{
 			Destroy(playerArray[index]);
 			playerArray[index] = null;
+			
+			scoreBoard[index].SetActive(false);
+			scoreGuys[index].SetActive(false);
 		}
 	}
 	

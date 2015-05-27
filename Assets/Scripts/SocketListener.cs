@@ -29,6 +29,12 @@ public class ServerAction
 	
 }
 
+public class ClientInfo
+{
+	public Socket client;
+	public string username;
+}
+
 public class SocketListener : MonoBehaviour 
 {
 public static string guiDebugStr = "";
@@ -36,7 +42,7 @@ public static string guiDebugStr = "";
 	// Thread signal.
 	public static ManualResetEvent allDone = new ManualResetEvent(false);
 	public static List<Socket> clients = new List<Socket>();
-	public static List<Socket> logedClients = new List<Socket>();
+	public static List<ClientInfo> logedClients = new List<ClientInfo>();
 	private static bool accepted = true;
 	
 	public string conn;
@@ -153,21 +159,25 @@ public static string guiDebugStr = "";
 		//guiDebugStr = token[0];
 		if(token[0] == "Login")
 		{
-			//bool loginOk = DataBaseLogin(token[1], token[2]);
-			bool loginOk = true;
+			bool loginOk = DataBaseLogin(token[1], token[2]);
+			//bool loginOk = true;
 			if(loginOk)
 			{
-				logedClients.Add(client);
+				ClientInfo clientInfo = new ClientInfo();
+				clientInfo.client = client;
+				clientInfo.username = token[1];
+				logedClients.Add(clientInfo);
 				Send(client, "LoadLobby|<EOF>");
 				//serverState = ServerState.PlayingMainGame;
 			}
 		}
 		else if(token[0] == "StartSession")
 		{
-			if(logedClients.Contains(client))
-			{
 				Send(client, "LoadLevel|<EOF>");
-			}
+//			if(logedClients.Contains(client))
+//			{
+//				Send(client, "LoadLevel|<EOF>");
+//			}
 		}
 		else if(token[0] == "Loaded")
 		{
@@ -479,6 +489,36 @@ public static string guiDebugStr = "";
 		{
 			Debug.Log("User name already exists");
 		}
+	}
+	
+	public void DataBaseAddKillScore(string username, int killscore)
+	{
+	
+	}
+	
+	public void DataBaseAddDeathScore(string username, int deathscore)
+	{
+		Debug.Log("deathSQL: " + username + "|" + deathscore);
+		IDbConnection dbconn;
+		dbconn = (IDbConnection) new SqliteConnection(conn);
+		dbconn.Open(); //Open connection to the database.
+		IDbCommand dbcmd = dbconn.CreateCommand();
+		
+		
+		string sqlQuery = "UPDATE Users SET Deaths = Deaths + 1 WHERE username =='"+username+"'";
+		dbcmd.CommandText = sqlQuery;
+		IDataReader reader = dbcmd.ExecuteReader();
+		
+		
+		Debug.Log( "user inserted into database" );
+		
+		reader.Close();
+		reader = null;
+		dbcmd.Dispose();
+		dbcmd = null;
+		dbconn.Close();
+		dbconn = null;
+		GC.Collect();
 	}
 	
 	bool isTaken(string username)
