@@ -4,7 +4,7 @@ using System.Collections;
 public class ServerBomb : MonoBehaviour {
 
 	public ServerCharacter owner;
-	public GameObject explosion;
+	public GameObject serverExplosionObj;
 	public float deathTime = 3.0f;
 	
 	
@@ -30,7 +30,9 @@ public class ServerBomb : MonoBehaviour {
 		owner.liveBombs--;
 		Destroy (this.gameObject);
 		
-		Instantiate(explosion, this.transform.position, this.transform.rotation);
+		GameObject expObj = Instantiate(serverExplosionObj, this.transform.position, this.transform.rotation) as GameObject;
+		ServerExplosion explosion = expObj.GetComponent<ServerExplosion>();
+		explosion.owner = this.owner;
 		
 		Vector2 up = (Vector2)this.transform.position + new Vector2 (0, 1);
 		Vector2 down = (Vector2)this.transform.position + new Vector2 (0, -1);
@@ -43,28 +45,36 @@ public class ServerBomb : MonoBehaviour {
 		
 		if(colObj == null || colObj.tag != "UnDestroyable" )
 		{
-			Instantiate(explosion, up, this.transform.rotation);
+			expObj = Instantiate(explosion, up, this.transform.rotation) as GameObject;
+			explosion = expObj.GetComponent<ServerExplosion>();
+			explosion.owner = this.owner;
 		}
 		
 		colObj = Physics2D.OverlapCircle (down, 0.3f);
 		
 		if(colObj == null || colObj.tag != "UnDestroyable" )
 		{
-			Instantiate(explosion, down, this.transform.rotation);
+			expObj = Instantiate(explosion, down, this.transform.rotation) as GameObject;
+			explosion = expObj.GetComponent<ServerExplosion>();
+			explosion.owner = this.owner;
 		}
 		
 		colObj = Physics2D.OverlapCircle (right, 0.3f);
 		
 		if(colObj == null || colObj.tag != "UnDestroyable" )
 		{
-			Instantiate(explosion, right, this.transform.rotation);
+			expObj = Instantiate(explosion, right, this.transform.rotation) as GameObject;
+			explosion = expObj.GetComponent<ServerExplosion>();
+			explosion.owner = this.owner;
 		}
 		
 		colObj = Physics2D.OverlapCircle (left, 0.3f);
 		
 		if(colObj == null || colObj.tag != "UnDestroyable" )
 		{
-			Instantiate(explosion, left, this.transform.rotation);
+			expObj = Instantiate(explosion, left, this.transform.rotation) as GameObject;
+			explosion = expObj.GetComponent<ServerExplosion>();
+			explosion.owner = this.owner;
 		}
 		
 	}
