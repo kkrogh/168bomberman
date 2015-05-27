@@ -25,6 +25,7 @@ public class ServerAction
 	public static bool accepted = true;
 	public static bool sending;
 	public static Socket logedPlayer = null;
+	public static int session = 0;
 	
 	
 }
@@ -32,6 +33,7 @@ public class ServerAction
 public class ClientInfo
 {
 	public Socket client;
+	public int session;
 	public string username;
 }
 
@@ -76,7 +78,7 @@ public static string guiDebugStr = "";
 		instance = this;
 		DontDestroyOnLoad(gameObject);
 		
-		levelManager = GameObject.Find("MainLevel").GetComponent<ServerLevelManager>();
+		levelManager = GameObject.Find("ServerLevelManager").GetComponent<ServerLevelManager>();
 	}
 	
 	
@@ -120,7 +122,16 @@ public static string guiDebugStr = "";
 		
 		if(ServerAction.logedPlayer != null)
 		{
-			levelManager.AddPlayer(ServerAction.logedPlayer);
+			int session = 1;
+			foreach(ClientInfo clientInfo in logedClients)
+			{
+				if(clientInfo.client == ServerAction.logedPlayer)
+				{
+					session = clientInfo.session;
+				}
+			}
+			
+			levelManager.AddPlayer(ServerAction.logedPlayer, session);
 			ServerAction.logedPlayer = null;
 			//Send(ServerAction.logedClient, "LoadLevel<EOF>");
 			
@@ -191,7 +202,16 @@ public static string guiDebugStr = "";
 		}
 		else if(token[0] == "StartSession")
 		{
-				Send(client, "LoadLevel|<EOF>");
+			foreach(ClientInfo clientInfo in logedClients)
+			{
+				if(clientInfo.client == client)
+				{
+					clientInfo.session = int.Parse(token[1]);
+				}
+			}
+					
+			Send(client, "LoadLevel|<EOF>");
+			
 //			if(logedClients.Contains(client))
 //			{
 //				Send(client, "LoadLevel|<EOF>");
@@ -199,7 +219,9 @@ public static string guiDebugStr = "";
 		}
 		else if(token[0] == "Loaded")
 		{
+		
 			ServerAction.logedPlayer = client;
+			ServerAction.session = 1;
 			
 		}
 		else if(token[0] == "Chat")

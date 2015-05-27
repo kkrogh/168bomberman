@@ -32,6 +32,8 @@ public class ServerLevelManager : MonoBehaviour
 	
 	public List<ServerPlayer> playerList;
 	
+	public Dictionary<int,List<ServerPlayer>> sessionMap;
+	
 	void Awake()
 	{
 		if(instance != null && instance != this)
@@ -50,6 +52,10 @@ public class ServerLevelManager : MonoBehaviour
 		
 		//bManPrefab = Resources.Load("ServerMan") as GameObject;
 		playerList = new List<ServerPlayer>();
+		sessionMap = new Dictionary<int,List<ServerPlayer>>();
+		sessionMap.Add(1, playerList);
+		sessionMap.Add(2, new List<ServerPlayer>());
+		
 	}
 	// Use this for initialization
 	void Start () 
@@ -90,6 +96,7 @@ public class ServerLevelManager : MonoBehaviour
 			else if(token[0] == "BombDropped")
 			{
 				Debug.Log("action: " + action.actionStr);
+				
 				float x = float.Parse(token[1]);
 				float y = float.Parse(token[2]);
 				
@@ -153,17 +160,20 @@ public class ServerLevelManager : MonoBehaviour
 		
 	}
 	
-	public void AddPlayer(Socket client)
+	public void AddPlayer(Socket client, int session)
 	{	
+	
 		if(playerList.Count <= 4)
 		{
-			int playerNum = playerList.Count+1;
+			int playerNum = sessionMap[session].Count+1;
+			
+			
 			ServerPlayer player = new ServerPlayer();
 			player.bomberman = Instantiate(bManPrefabs[playerNum-1]) as GameObject;
 			player.playerNum = playerNum;
 			player.bomberman.GetComponent<ServerCharacter>().playerNum = playerNum;
 			
-			SetPlayerStartPosition(player.bomberman, playerNum);
+			SetPlayerStartPosition(player.bomberman, playerNum, session);
 			
 			
 			player.client = client;
@@ -198,24 +208,48 @@ public class ServerLevelManager : MonoBehaviour
 		
 	}
 	
-	public void SetPlayerStartPosition(GameObject gameObj, int playerNum)
+	public void SetPlayerStartPosition(GameObject gameObj, int playerNum, int session)
 	{
-		if(playerNum == 1)
+		float offset = (session-1)*13;
+		if(session == 1)
 		{
-			gameObj.transform.position = new Vector2(1,9);
+			if(playerNum == 1)
+			{
+				gameObj.transform.position = new Vector2(1+offset,9);
+			}
+			else if(playerNum == 2)
+			{
+				gameObj.transform.position = new Vector2(1+offset,1);
+			}
+			else if(playerNum == 3)
+			{
+				gameObj.transform.position = new Vector2(11+offset,9);
+			}
+			else if(playerNum == 4)
+			{
+				gameObj.transform.position = new Vector2(11+offset,1);
+			}
 		}
-		else if(playerNum == 2)
+		else if(session == 2)
 		{
-			gameObj.transform.position = new Vector2(1,1);
+			if(playerNum == 1)
+			{
+				gameObj.transform.position = new Vector2(1+offset,9);
+			}
+			else if(playerNum == 2)
+			{
+				gameObj.transform.position = new Vector2(1+offset,1);
+			}
+			else if(playerNum == 3)
+			{
+				gameObj.transform.position = new Vector2(11+offset,9);
+			}
+			else if(playerNum == 4)
+			{
+				gameObj.transform.position = new Vector2(11+offset,1);
+			}
 		}
-		else if(playerNum == 3)
-		{
-			gameObj.transform.position = new Vector2(11,9);
-		}
-		else if(playerNum == 4)
-		{
-			gameObj.transform.position = new Vector2(11,1);
-		}
+	
 	}
 	
 }
