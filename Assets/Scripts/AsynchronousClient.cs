@@ -248,7 +248,7 @@ public class AsynchronousClient : MonoBehaviour{
 		{
 			ClientAction.lobbyInfo.usersstrings.Add(token[1]);
 		}
-		
+		//yo
 		}
 		catch(Exception e)
 		{
