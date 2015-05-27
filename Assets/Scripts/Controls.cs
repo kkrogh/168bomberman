@@ -9,7 +9,10 @@ using System.Collections;
 public class Controls : MonoBehaviour {
 	public float runSpeed = 8f;
 	public GameObject bomb;
+	public AudioClip walk;
+	public AudioClip bombSet;
 
+	private AudioSource source;
 	private Animator animator;
 	public Character _Character;
 
@@ -30,6 +33,7 @@ public class Controls : MonoBehaviour {
 	void Awake()
 	{
 		animator = GetComponent<Animator> ();
+		source = GetComponent<AudioSource> ();
 		
 	}
 	
@@ -37,8 +41,7 @@ public class Controls : MonoBehaviour {
 	void FixedUpdate () 
 	{
 		//character can not move during dying animation
-	if (!_Character.dying) // && ClientLevelManager.instance.gameState == GameState.Playing) 
-	{
+	if (!_Character.dying) { // && ClientLevelManager.instance.gameState == GameState.Playing)
 			if (Input.GetKeyDown (KeyCode.UpArrow)) {
 				animator.SetTrigger ("Up");
 			}
@@ -98,8 +101,7 @@ public class Controls : MonoBehaviour {
 //
 //			}
 
-			if (Input.GetKeyDown (KeyCode.Space)) 
-			{
+			if (Input.GetKeyDown (KeyCode.Space)) {
 				
 				
 				float x = Mathf.Round (this.transform.position.x);
@@ -113,17 +115,18 @@ public class Controls : MonoBehaviour {
 				foreach (Collider2D col in colObjs) {
 					if (col.tag == "Bomb") {
 						bombPlaced = true;
+
 					}
 				}
 			
 				if (bomberman.liveBombs < bomberman.bombLimit && !bombPlaced) {
-				
-					string content = "BombDropped|" + ClientLevelManager.instance.playerNum + "|" + x.ToString() + "|" + y.ToString() + "|<EOF>";
+					source.PlayOneShot (bombSet);
+					string content = "BombDropped|" + ClientLevelManager.instance.playerNum + "|" + x.ToString () + "|" + y.ToString () + "|<EOF>";
 					StateObject send_so = new StateObject ();
 					send_so.workSocket = AsynchronousClient.client;
 					AsynchronousClient.Send (AsynchronousClient.client, content, send_so);
 					
-					bomberman.DropBomb (x,y);
+					bomberman.DropBomb (x, y);
 					bomberman.liveBombs++;
 				}
 
@@ -141,10 +144,9 @@ public class Controls : MonoBehaviour {
 //			
 //			}
 			
-			if(timer > 0.02)
-			{
+			if (timer > 0.02) {
 				if (moved) {
-					string content =  "PlayerPos|" + ClientLevelManager.instance.playerNum + "|" + this.transform.position.x.ToString () 
+					string content = "PlayerPos|" + ClientLevelManager.instance.playerNum + "|" + this.transform.position.x.ToString () 
 						+ "|" + this.transform.position.y.ToString () + "|<EOF>";
 					StateObject send_so = new StateObject ();
 					send_so.workSocket = AsynchronousClient.client;
@@ -154,7 +156,7 @@ public class Controls : MonoBehaviour {
 				timer = 0;
 			}
 			timer = timer + Time.deltaTime;
-		}
+		} 
 	}
 
 

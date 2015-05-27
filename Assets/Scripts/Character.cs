@@ -13,13 +13,17 @@ public class Character : MonoBehaviour {
 	public int deathCount;
 	public bool dying;
 	public GameObject bomb;
-	
+
+	private AudioSource source;
+	public AudioClip death;
+
 	void Awake()
 	{
 		animator = GetComponent<Animator> ();
 		bomb = Resources.Load("Bomb") as GameObject;
 		deathCount = 0;
 		dying = false;
+		source = GetComponent<AudioSource> ();
 	}
 
 
@@ -53,6 +57,7 @@ public class Character : MonoBehaviour {
 			deathCount=90;
 			animator.SetTrigger ("Death");
 			dying=true;
+			source.PlayOneShot(death);
 		}
 	}
 

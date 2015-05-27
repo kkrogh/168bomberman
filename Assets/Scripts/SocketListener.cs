@@ -78,7 +78,7 @@ public static string guiDebugStr = "";
 		instance = this;
 		DontDestroyOnLoad(gameObject);
 		
-		levelManager = GameObject.Find("ServerLevelManager").GetComponent<ServerLevelManager>();
+		levelManager = GameObject.Find("MainLevel").GetComponent<ServerLevelManager>();
 	}
 	
 	
