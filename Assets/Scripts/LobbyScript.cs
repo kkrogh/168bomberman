@@ -22,9 +22,9 @@ public class LobbyScript : MonoBehaviour {
 		serverInstance = SocketListener.instance;
 		clientInstance = AsynchronousClient.instance;
 			
-		userstextstring = "Mario\nLuigi\nPeach";
+		userstextstring = "";
 		//userstext.text = userstextstring;
-		chattextstring = "Mario1: Hey Peach!\nLuigi: .....\n";
+		chattextstring = "";
 
 	}
 	
@@ -43,12 +43,17 @@ public class LobbyScript : MonoBehaviour {
 		}
 
 		chattextstring = "";
+		userstextstring = "";
 		string[] stringy = new string[5];
 		ClientAction.lobbyInfo.chatstrings.CopyTo (stringy, 0);
 
 		foreach (string s in stringy) {
 			chattextstring+= "\n"+s;
 
+		}
+		foreach (string s in ClientAction.lobbyInfo.usersstrings) {
+			userstextstring+= "\n"+s;
+			
 		}
 
 		userstext.text = userstextstring;

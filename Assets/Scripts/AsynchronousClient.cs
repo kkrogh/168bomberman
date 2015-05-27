@@ -193,6 +193,12 @@ public class AsynchronousClient : MonoBehaviour{
 		if(token[0] == "LoadLobby")
 		{
 			ClientAction.loadLobby = true;
+
+				for(int i = 1; i < token.Length-1;i++)
+				{
+					ClientAction.lobbyInfo.usersstrings.Add(token[i]);
+
+				}
 		}
 		if(token[0] == "PlayerNum")
 		{
