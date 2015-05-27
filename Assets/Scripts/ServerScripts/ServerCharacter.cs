@@ -62,10 +62,18 @@ public class ServerCharacter : MonoBehaviour {
 			
 			deaths--;
 			
+			ServerCharacter owner = col.gameObject.GetComponent<ServerExplosion>().owner;
+			
+			if(owner != this)
+			{
+				SocketListener.instance.DataBaseAddKillScore(owner.playername, 1);
+			}
+			
 			SocketListener.instance.DataBaseAddDeathScore(playername, 1);
+			
 			foreach(ServerPlayer player in ServerLevelManager.instance.playerList)
 			{
-				SocketListener.Send(player.client, "Death|" + playerNum + "|"
+				SocketListener.Send(player.client,  "Death|" + playerNum + "|"
 									+ deaths + "|<EOF>");
 			}
 			
