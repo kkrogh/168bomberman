@@ -17,6 +17,7 @@ public class ServerCharacter : MonoBehaviour {
 	public int deaths;
 	public int playerNum;
 	public string playername;
+	public int session;
 	
 	void Awake()
 	{
@@ -42,7 +43,9 @@ public class ServerCharacter : MonoBehaviour {
 		if (deathCount > 1) {
 			deathCount--;
 		} else if(deathCount==1){
-			this.transform.position = new Vector2 (1, 1);
+			
+			float offset = (session-1)*13;
+			this.transform.position = new Vector2 (1+offset, 1);
 			deathCount=0;
 			dying=false;
 		}

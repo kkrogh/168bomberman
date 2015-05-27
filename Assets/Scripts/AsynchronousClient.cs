@@ -90,6 +90,7 @@ public class AsynchronousClient : MonoBehaviour{
 	private static bool received = true;
 
 	public string playername;
+	public int session = 0;
 
 	
 	void Awake()

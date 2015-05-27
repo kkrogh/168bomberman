@@ -78,6 +78,7 @@ public class LobbyScript : MonoBehaviour {
 
 	public void sendLoadGame(int session)
 	{
+		AsynchronousClient.instance.session = session;
 		StateObject send_so = new StateObject();
 		send_so.workSocket = AsynchronousClient.client;
 		AsynchronousClient.Send(AsynchronousClient.client,"StartSession|"+session+"|<EOF>", send_so);
