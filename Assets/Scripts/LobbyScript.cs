@@ -31,8 +31,9 @@ public class LobbyScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-
+		userstext.text = userstextstring;
+		chattext.text = chattextstring;
+		
 	}
 
 	void OnGUI(){
