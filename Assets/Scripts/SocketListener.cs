@@ -493,7 +493,27 @@ public static string guiDebugStr = "";
 	
 	public void DataBaseAddKillScore(string username, int killscore)
 	{
-	
+		Debug.Log("killSQL: " + username + "|" + killscore);
+		IDbConnection dbconn;
+		dbconn = (IDbConnection) new SqliteConnection(conn);
+		dbconn.Open(); //Open connection to the database.
+		IDbCommand dbcmd = dbconn.CreateCommand();
+		
+		
+		string sqlQuery = "UPDATE Users SET Kills = Kills + 1 WHERE username =='"+username+"'";
+		dbcmd.CommandText = sqlQuery;
+		IDataReader reader = dbcmd.ExecuteReader();
+		
+		
+		Debug.Log( "kill incremented" );
+		
+		reader.Close();
+		reader = null;
+		dbcmd.Dispose();
+		dbcmd = null;
+		dbconn.Close();
+		dbconn = null;
+		GC.Collect();
 	}
 	
 	public void DataBaseAddDeathScore(string username, int deathscore)
@@ -510,7 +530,7 @@ public static string guiDebugStr = "";
 		IDataReader reader = dbcmd.ExecuteReader();
 		
 		
-		Debug.Log( "user inserted into database" );
+		Debug.Log( "death incremented in database" );
 		
 		reader.Close();
 		reader = null;
