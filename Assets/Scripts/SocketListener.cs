@@ -152,7 +152,7 @@ public static string guiDebugStr = "";
 	{
 		try
 		{
-			//guiDebugStr = message;
+			guiDebugStr = message;
 		//Debug.Log("ServerMessageHandler: " + message);
 		string[] token = message.Split(new Char[]{'|'});
 		//parse strings here. Example:
@@ -167,7 +167,15 @@ public static string guiDebugStr = "";
 				clientInfo.client = client;
 				clientInfo.username = token[1];
 				logedClients.Add(clientInfo);
-				Send(client, "LoadLobby|<EOF>");
+				
+				string userStr = "";
+				
+				foreach(ClientInfo obj in logedClients)
+				{
+					userStr = userStr + obj.username + "|";
+				}
+				
+				Send(client, "LoadLobby|" + userStr + "<EOF>");
 				//serverState = ServerState.PlayingMainGame;
 			}
 		}
@@ -187,8 +195,14 @@ public static string guiDebugStr = "";
 		else if(token[0] == "Chat")
 		{
 			Debug.Log ("received chat, sending chat");
-			string chatstring = "Chat|" +token[1] +"|<EOF>";
-			Send (client,chatstring);
+			string chatstring = "Chat|" + token[1] +"|<EOF>";
+			
+			foreach(ClientInfo clientInfo in logedClients)
+			{
+					Send (clientInfo.client,chatstring);
+			}
+			
+			//Send (client,chatstring);
 			Debug.Log ("after send");
 			
 		}

@@ -45,7 +45,7 @@ public class ServerBomb : MonoBehaviour {
 		
 		if(colObj == null || colObj.tag != "UnDestroyable" )
 		{
-			expObj = Instantiate(explosion, up, this.transform.rotation) as GameObject;
+			expObj = Instantiate(serverExplosionObj, up, this.transform.rotation) as GameObject;
 			explosion = expObj.GetComponent<ServerExplosion>();
 			explosion.owner = this.owner;
 		}
@@ -54,7 +54,7 @@ public class ServerBomb : MonoBehaviour {
 		
 		if(colObj == null || colObj.tag != "UnDestroyable" )
 		{
-			expObj = Instantiate(explosion, down, this.transform.rotation) as GameObject;
+			expObj = Instantiate(serverExplosionObj, down, this.transform.rotation) as GameObject;
 			explosion = expObj.GetComponent<ServerExplosion>();
 			explosion.owner = this.owner;
 		}
@@ -63,7 +63,7 @@ public class ServerBomb : MonoBehaviour {
 		
 		if(colObj == null || colObj.tag != "UnDestroyable" )
 		{
-			expObj = Instantiate(explosion, right, this.transform.rotation) as GameObject;
+			expObj = Instantiate(serverExplosionObj, right, this.transform.rotation) as GameObject;
 			explosion = expObj.GetComponent<ServerExplosion>();
 			explosion.owner = this.owner;
 		}
@@ -72,7 +72,7 @@ public class ServerBomb : MonoBehaviour {
 		
 		if(colObj == null || colObj.tag != "UnDestroyable" )
 		{
-			expObj = Instantiate(explosion, left, this.transform.rotation) as GameObject;
+			expObj = Instantiate(serverExplosionObj, left, this.transform.rotation) as GameObject;
 			explosion = expObj.GetComponent<ServerExplosion>();
 			explosion.owner = this.owner;
 		}
