@@ -247,8 +247,9 @@ public static string guiDebugStr = "";
 		//	Debug.Log("Handling position");
 			PlayerAction action = new PlayerAction();
 			action.client = client;
-			action.playerNum = int.Parse(token[1]);
-			action.actionStr = "PlayerPos|" + token[2] + "|" + token[3];
+			action.session = int.Parse(token[1]);
+			action.playerNum = int.Parse(token[2]);
+			action.actionStr = "PlayerPos|" + token[3] + "|" + token[4];
 			ServerLevelManager.actionQueue.Enqueue(action);
 			
 		}
@@ -256,8 +257,9 @@ public static string guiDebugStr = "";
 		{
 			PlayerAction action = new PlayerAction();
 			action.client = client;
-			action.playerNum = int.Parse(token[1]);
-			action.actionStr = "BombDropped|" + token[2] + "|" + token[3];
+			action.session = int.Parse(token[1]);
+			action.playerNum = int.Parse(token[2]);
+			action.actionStr = "BombDropped|" + token[3] + "|" + token[4];
 			ServerLevelManager.actionQueue.Enqueue(action);
 		}
 		else if(token[0] == "Disconnect")
